@@ -1,0 +1,616 @@
+<!doctype html><html><head><meta charset=utf8><meta name="description" content="Suite Life Diary by Priya: content creator capturing luxury, boutique and one-of-a-kind hotel experiences."><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Suite Life Diary</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Figtree:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: couture monochrome — black bands alternate with soft white pages; beige used for accents, rules and controls */
+:root{
+  --paper:#F7F5F2; --surface:#FFFFFF; --ink:#0A0A0A; --muted:#5F5A55;
+  --deep:#0A0A0A; --accent:#E3D5BF; --accent-ink:#0A0A0A; --on-accent:#0A0A0A; --line:#E2DED8; --on-deep:#F5F2EC; --slot:#ECE8E2;
+  --display:"Playfair Display", "Didot", Georgia, serif;
+  --body:"Playfair Display", Georgia, serif;
+  --mono:"Playfair Display", Georgia, serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0A0A0A; --surface:#141414; --ink:#F2EFEA; --muted:#9E9890;
+  --deep:#000000; --accent:#E3D5BF; --accent-ink:#E3D5BF; --on-accent:#0A0A0A; --line:#2A2A2A; --on-deep:#F5F2EC; --slot:#1C1C1C; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0A0A0A; --surface:#141414; --ink:#F2EFEA; --muted:#9E9890;
+  --deep:#000000; --accent:#E3D5BF; --accent-ink:#E3D5BF; --on-accent:#0A0A0A; --line:#2A2A2A; --on-deep:#F5F2EC; --slot:#1C1C1C; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1100px;margin:0 auto;padding-left:max(20px, env(safe-area-inset-left,0px));padding-right:max(20px, env(safe-area-inset-right,0px))}
+section > .wrap{padding-block:clamp(60px,8vw,104px)}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;line-height:1.08}
+p{margin:0}
+a{color:inherit}
+.label{font:500 11.5px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--accent-ink)}
+.deep .label{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.deep{background:var(--deep);color:var(--on-deep)}
+.head{display:grid;gap:14px;margin-bottom:44px;max-width:640px}
+.head h2{font-size:clamp(32px,4.4vw,52px)}
+.head p.intro{color:var(--muted)}
+.deep .head p.intro{color:color-mix(in srgb,var(--on-deep) 72%,transparent)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:0;letter-spacing:.12em;text-transform:uppercase;font-size:13px;font:500 15px/1 var(--body);text-decoration:none;border:1px solid var(--accent);background:var(--accent);color:var(--on-accent);cursor:pointer}
+.btn:hover{filter:brightness(1.07)}
+.todo{color:var(--accent-ink);border-bottom:1px dashed var(--accent-ink)}
+.deep .todo{color:var(--accent);border-color:var(--accent)}
+
+/* 1 · HERO */
+.hero .wrap{padding-block:clamp(84px,14vw,168px);display:grid;justify-items:center;text-align:center;gap:0}
+.hero .handle{font:500 16px/1 var(--mono);letter-spacing:.08em;text-transform:none;color:var(--accent)}
+.hero h1{font-size:clamp(52px,11vw,144px);font-weight:700;letter-spacing:-.02em;line-height:.98;margin-top:22px}
+.hero .page{font:italic 400 clamp(20px,2.8vw,30px)/1.3 var(--display);margin-top:20px;color:color-mix(in srgb,var(--on-deep) 88%,transparent)}
+
+/* TOP NAV */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--deep)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--deep);color:var(--on-deep);border-bottom:1px solid color-mix(in srgb,var(--on-deep) 14%,transparent)}
+.nav .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px 24px;padding-block:16px}
+.nav .name{font:700 22px/1 var(--display);text-decoration:none;justify-self:start}
+.nav .links{display:flex;gap:clamp(18px,3vw,36px)}
+.nav .links a,.nav .cta{font:500 12px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;text-decoration:none}
+.nav .links a{color:color-mix(in srgb,var(--on-deep) 78%,transparent);padding-block:6px;border-bottom:1px solid transparent}
+.nav .links a:hover{color:var(--on-deep);border-color:var(--accent)}
+.nav .cta{justify-self:end;border:1px solid var(--accent);padding:10px 14px;color:var(--on-deep)}
+.nav .cta:hover{background:var(--accent);color:var(--on-accent)}
+section{scroll-margin-top:64px}
+@media (max-width:720px){
+  .nav .wrap{grid-template-columns:1fr auto;padding-block:12px}
+  .nav .links{grid-column:1/-1;grid-row:2;justify-content:space-between;gap:12px}
+  .nav .links a{font-size:11px;letter-spacing:.12em}
+  section{scroll-margin-top:100px}
+}
+.hero .rule{width:64px;height:1px;background:var(--accent);margin:30px 0}
+.hero .tag{font:500 13px/1.4 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:color-mix(in srgb,var(--on-deep) 78%,transparent)}
+.hero .btn{margin-top:38px}
+
+/* 2 · ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px)}
+.about-grid > div{display:grid;gap:16px;align-content:start;min-width:0}
+.about-grid h2{font-size:clamp(30px,3.8vw,44px)}
+.about-grid p{color:var(--muted);max-width:52ch}
+.about-grid .mission p.big{font:italic 400 clamp(22px,2.6vw,30px)/1.4 var(--display);color:var(--ink)}
+.mission{border-left:1px solid var(--accent);padding-left:clamp(20px,3vw,36px);margin-top:20px}
+.about-grid{align-items:center}
+.me{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:clamp(120px,15vw,200px);gap:12px;min-width:0}
+.me .ph{background:linear-gradient(150deg,var(--slot),color-mix(in srgb,var(--slot) 72%,var(--accent)));display:grid;place-items:center;color:var(--muted);overflow:hidden;min-width:0}
+.me .ph:first-child{grid-row:span 2}
+.me .ph span{font:500 10.5px/1.3 var(--mono);letter-spacing:.14em;text-transform:uppercase;border:1px dashed currentColor;padding:6px 9px}
+.me .ph img{width:100%;height:100%;object-fit:cover}
+.ph:has(img[style*="contain"]),.svc .img:has([style*="contain"]),.slide:has([style*="contain"]),.m:has([style*="contain"]){background:var(--deep)}
+
+/* 3 · SERVICES */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc{border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);display:flex;flex-direction:column;min-width:0}
+.svc .img{aspect-ratio:4/3;max-width:100%;display:grid;place-items:center;overflow:hidden;color:color-mix(in srgb,var(--on-deep) 60%,transparent);background:linear-gradient(150deg,color-mix(in srgb,var(--on-deep) 12%,var(--deep)),color-mix(in srgb,var(--accent) 22%,var(--deep)))}
+.svc .img span{font:500 10.5px/1.3 var(--mono);letter-spacing:.14em;text-transform:uppercase;border:1px dashed currentColor;padding:6px 9px}
+.svc .img img{width:100%;height:100%;object-fit:cover}
+.svc .txt{padding:26px 26px 32px;display:grid;gap:12px}
+.svc .ico{width:40px;height:40px;color:var(--accent)}
+.svc h3{font-size:26px}
+.svc p{color:color-mix(in srgb,var(--on-deep) 74%,transparent);font-size:15.5px}
+
+/* 4 · HOTELS — 2 per row, each a carousel */
+.hotels{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(20px,3vw,36px)}
+.hotel{background:var(--surface);border:1px solid var(--line);min-width:0}
+.carousel{position:relative}
+.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:start;aspect-ratio:4/3;max-width:100%;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--slot),color-mix(in srgb,var(--slot) 70%,var(--accent)));color:var(--muted)}
+.slide:not(:has(img,video)){background:linear-gradient(135deg,color-mix(in srgb,var(--slot) calc(100% - var(--s,0)*7%),var(--accent)),color-mix(in srgb,var(--slot) calc(70% - var(--s,0)*4%),var(--deep)))}
+.slide span{font:500 11px/1.3 var(--mono);letter-spacing:.14em;text-transform:uppercase;border:1px dashed currentColor;padding:7px 11px}
+.slide img{width:100%;height:100%;object-fit:cover}
+.arrow{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:0;cursor:pointer;
+  background:color-mix(in srgb,var(--surface) 88%,transparent);color:var(--ink);display:grid;place-items:center;box-shadow:0 2px 10px rgba(10,16,30,.18)}
+.arrow svg{width:18px;height:18px}
+.arrow.prev{left:12px}.arrow.next{right:12px}
+.arrow:disabled{opacity:.35;cursor:default}
+.dots{position:absolute;bottom:12px;left:0;right:0;display:flex;justify-content:center;gap:6px}
+.dots i{width:6px;height:6px;border-radius:50%;background:color-mix(in srgb,var(--ink) 30%,transparent)}
+.dots i.on{background:var(--accent);width:18px;border-radius:3px}
+.hotel .meta{padding:18px 22px 22px;display:grid;gap:10px}
+.hotel .meta .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.hotel .desc{color:var(--muted);font-size:15px;line-height:1.6;max-width:60ch}
+.hotel .desc.demo{font-style:italic;opacity:.75}
+.dots i.on{background:var(--ink)}
+.hotel h3{font-size:clamp(22px,2.4vw,28px)}
+.hotel .where{font:400 12px/1.3 var(--mono);color:var(--muted);letter-spacing:.08em;text-transform:uppercase;text-align:right}
+
+/* 5 · MOMENTS — videos and photos */
+.moments{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-flow:dense;gap:14px}
+.m{position:relative;background:linear-gradient(160deg,var(--slot),color-mix(in srgb,var(--slot) 75%,var(--deep)));display:grid;place-items:center;color:var(--muted);min-width:0;overflow:hidden}
+.m.v{aspect-ratio:9/16;grid-row:span 2}
+.m.p{aspect-ratio:1/1}
+.m.wide{grid-column:span 2;aspect-ratio:auto}
+.m .play{width:56px;height:56px;border-radius:50%;border:1px solid currentColor;display:grid;place-items:center}
+.m .play svg{width:18px;height:18px;margin-left:3px}
+.m .tagm{position:absolute;left:12px;top:12px;font:500 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;background:var(--surface);color:var(--ink);padding:6px 8px}
+.m.v .tagm{background:var(--accent);color:var(--on-accent)}
+
+/* 6 · TESTIMONIALS */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.q{background:var(--surface);border:1px solid var(--line);padding:30px 26px;display:grid;gap:22px;align-content:space-between;min-width:0}
+.q blockquote{margin:0;font:italic 400 20px/1.5 var(--display);color:var(--muted)}
+.q blockquote::before{content:"\201C";display:block;font:400 54px/0.6 var(--display);color:var(--accent);margin-bottom:12px;font-style:normal}
+.q .who{font:500 12px/1.5 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+
+/* 7 · CONTACT */
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,72px);align-items:center}
+.contact h2{font-size:clamp(38px,6vw,68px)}
+.contact h2 em{color:var(--accent)}
+.contact .sub{margin-top:18px;max-width:42ch;color:color-mix(in srgb,var(--on-deep) 78%,transparent)}
+.fields{border:1px solid color-mix(in srgb,var(--accent) 50%,transparent)}
+.field{display:grid;grid-template-columns:1fr auto;gap:6px 14px;align-items:center;padding:20px 22px;border-bottom:1px solid color-mix(in srgb,var(--accent) 28%,transparent)}
+.field:last-child{border-bottom:0}
+.field .label{grid-column:1/-1}
+.field .val{font:400 21px/1.3 var(--display);word-break:break-word;min-width:0;text-decoration:none}
+a.val{justify-self:start;border-bottom:1px solid var(--accent);padding-bottom:2px}
+a.val:hover{color:var(--accent)}
+#ig::after{content:" \2197";font-size:.8em;color:var(--accent)}
+@media (max-width:600px){
+  .field{padding:16px 16px;gap:6px 10px}
+  .field .val{font-size:clamp(14px,4.3vw,19px)}
+  #email{white-space:nowrap;letter-spacing:-.01em}
+  .copy{padding:8px 9px}
+}
+.copy{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;background:none;border:1px solid color-mix(in srgb,var(--on-deep) 35%,transparent);color:inherit;padding:9px 11px;cursor:pointer;border-radius:0}
+.copy:hover{border-color:var(--accent)}
+footer{background:var(--deep);color:color-mix(in srgb,var(--on-deep) 55%,transparent);border-top:1px solid color-mix(in srgb,var(--accent) 20%,transparent)}
+footer .wrap{padding-block:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font:400 12px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase}
+footer a{text-transform:none;letter-spacing:.04em;font-size:13px}
+
+@media (max-width:860px){
+  .about-grid,.contact .wrap{grid-template-columns:1fr}
+  .services,.quotes{grid-template-columns:1fr}
+  .moments{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:600px){ .hotels{grid-template-columns:1fr} }
+/* Moments: an editorial collage of 10 photos in mixed sizes (big squares, tall and small tiles) */
+.moments{gap:12px;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(110px,12.5vw,160px);grid-template-rows:none;
+  grid-template-areas:"a a b c" "a a d c" "e f f g" "e f f h" "i i j h" "i i j h"}
+.moments .m.p{aspect-ratio:auto;min-height:0}
+.moments [data-slot="mom.0"]{grid-area:a}.moments [data-slot="mom.1"]{grid-area:b}.moments [data-slot="mom.2"]{grid-area:c}.moments [data-slot="mom.3"]{grid-area:d}.moments [data-slot="mom.4"]{grid-area:e}.moments [data-slot="mom.5"]{grid-area:f}.moments [data-slot="mom.6"]{grid-area:g}.moments [data-slot="mom.7"]{grid-area:h}.moments [data-slot="mom.8"]{grid-area:i}.moments [data-slot="mom.9"]{grid-area:j}
+.moments.partial{grid-template-areas:none}
+.moments.partial .m{grid-area:auto}
+@media (max-width:860px){
+  .moments{grid-template-columns:repeat(2,1fr);grid-auto-rows:clamp(100px,32vw,150px);
+    grid-template-areas:"a a" "a a" "b c" "d c" "e g" "e h" "f f" "f f" "i j" "i j"}
+}
+
+@media (prefers-reduced-motion:reduce){ .track{scroll-behavior:auto} }
+
+/* MEDIA + EDITING */
+.hero{position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;overflow:hidden}
+/* Default backdrop until a photo is uploaded: an illustration of a balcony looking out to sea at dusk (not a photograph) */
+.hero-bg:not(.has){background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.15) 40%,rgba(0,0,0,.45)),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900' preserveAspectRatio='xMidYMid slice'%3E %3Cdefs%3E %3ClinearGradient id='sky' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23050506'/%3E%3Cstop offset='.6' stop-color='%2317140F'/%3E%3Cstop offset='1' stop-color='%233A3024'/%3E%3C/linearGradient%3E %3ClinearGradient id='sea' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%231C1813'/%3E%3Cstop offset='1' stop-color='%23030303'/%3E%3C/linearGradient%3E %3CradialGradient id='glow' cx='1270' cy='520' r='460' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23E3D5BF' stop-opacity='.38'/%3E%3Cstop offset='.35' stop-color='%23E3D5BF' stop-opacity='.1'/%3E%3Cstop offset='1' stop-color='%23E3D5BF' stop-opacity='0'/%3E%3C/radialGradient%3E %3Cpattern id='bal' width='64' height='170' patternUnits='userSpaceOnUse' x='0' y='718'%3E %3Crect x='496' y='0' width='12' height='170' fill='%23000'/%3E%3Cellipse cx='32' cy='60' rx='15' ry='34' fill='%23000'/%3E%3Cellipse cx='32' cy='128' rx='11' ry='18' fill='%23000'/%3E%3C/pattern%3E %3C/defs%3E %3Crect width='1600' height='522' fill='url%28%23sky%29'/%3E %3Crect y='520' width='1600' height='380' fill='url%28%23sea%29'/%3E %3Crect width='1600' height='900' fill='url%28%23glow%29'/%3E %3Ccircle cx='1270' cy='522' r='54' fill='%23E3D5BF' opacity='.42'/%3E %3Crect y='520' width='1600' height='900' fill='url%28%23sea%29' opacity='.0'/%3E %3Crect y='521' width='1600' height='1.5' fill='%23E3D5BF' opacity='.35'/%3E %3Crect x='1125' y='528' width='290' height='3' rx='1' fill='%23E3D5BF' opacity='0.42'/%3E%3Crect x='1134' y='539' width='272' height='2' rx='1' fill='%23E3D5BF' opacity='0.38'/%3E%3Crect x='1143' y='550' width='255' height='2' rx='1' fill='%23E3D5BF' opacity='0.34'/%3E%3Crect x='1150' y='561' width='239' height='3' rx='1' fill='%23E3D5BF' opacity='0.31'/%3E%3Crect x='1158' y='572' width='224' height='2' rx='1' fill='%23E3D5BF' opacity='0.28'/%3E%3Crect x='1165' y='583' width='211' height='2' rx='1' fill='%23E3D5BF' opacity='0.25'/%3E%3Crect x='1171' y='594' width='198' height='3' rx='1' fill='%23E3D5BF' opacity='0.22'/%3E%3Crect x='1177' y='605' width='186' height='2' rx='1' fill='%23E3D5BF' opacity='0.20'/%3E%3Crect x='1182' y='616' width='175' height='2' rx='1' fill='%23E3D5BF' opacity='0.18'/%3E%3Crect x='1187' y='627' width='165' height='3' rx='1' fill='%23E3D5BF' opacity='0.16'/%3E%3Crect x='1192' y='638' width='156' height='2' rx='1' fill='%23E3D5BF' opacity='0.15'/%3E%3Crect x='1196' y='649' width='147' height='2' rx='1' fill='%23E3D5BF' opacity='0.13'/%3E%3Crect x='1201' y='660' width='139' height='3' rx='1' fill='%23E3D5BF' opacity='0.12'/%3E%3Crect x='1204' y='671' width='131' height='2' rx='1' fill='%23E3D5BF' opacity='0.11'/%3E%3Crect x='1208' y='682' width='124' height='2' rx='1' fill='%23E3D5BF' opacity='0.10'/%3E%3Crect x='1211' y='693' width='118' height='3' rx='1' fill='%23E3D5BF' opacity='0.09'/%3E%3Crect x='1214' y='704' width='111' height='2' rx='1' fill='%23E3D5BF' opacity='0.08'/%3E%3Crect x='1217' y='715' width='106' height='2' rx='1' fill='%23E3D5BF' opacity='0.07'/%3E %3Crect y='700' width='1600' height='20' fill='%23000'/%3E %3Crect y='690' width='1600' height='12' fill='%230A0A0A'/%3E %3Crect y='718' width='1600' height='172' fill='url%28%23bal%29'/%3E %3Crect y='880' width='1600' height='20' fill='%23000'/%3E %3C/svg%3E") center bottom/cover no-repeat,#000}
+.hero-bg img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-bg.has::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.35) 45%,rgba(0,0,0,.7))}
+.hero .wrap{position:relative;z-index:1}
+.hero-tools{position:absolute;top:16px;right:max(16px,env(safe-area-inset-right,0px));z-index:3;display:flex;gap:6px}
+.ph,.svc .img,.slide{position:relative}
+.ph video,.svc .img video,.slide video{width:100%;height:100%;object-fit:cover;display:block}
+.m img,.m video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.tools{position:absolute;left:8px;right:8px;bottom:8px;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px;z-index:4}
+.slide .tools{bottom:34px}
+.tools button,.editbar button,.addbtn,.adj-bar button{font:500 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:9px 11px;border:1px solid #0A0A0A;background:#FFFFFF;color:#0A0A0A;cursor:pointer;border-radius:0}
+.tools button.primary,.editbar button.primary,.adj-bar button.primary{background:#0A0A0A;color:#F5F2EC}
+.editbar button:disabled{opacity:.5;cursor:default}
+.editbar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--surface);color:var(--ink);border-top:1px solid var(--line);box-shadow:0 -6px 24px rgba(0,0,0,.12);display:flex;align-items:center;flex-wrap:wrap;gap:10px;
+  padding-top:12px;padding-bottom:calc(12px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.editbar #ebmsg{flex:1 1 220px;font-size:14px;color:var(--muted)}
+body.has-editbar{padding-bottom:84px}
+.hotel .meta.editing{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ed{font:400 20px/1.2 var(--display);border:1px dashed var(--muted);background:transparent;color:var(--ink);padding:6px 8px;min-width:0;width:100%;border-radius:0}
+.ed.where{font:400 12px/1.2 var(--mono);text-transform:uppercase;letter-spacing:.08em}
+.addbtn{grid-column:1/-1;justify-self:start}
+textarea.ed{grid-column:1/-1;font:400 15px/1.55 var(--body);resize:vertical;min-height:84px}
+.slide{overflow:hidden}
+.ph>img,.ph>video,.svc .img>img,.svc .img>video,.slide>img,.slide>video{position:absolute;inset:0;width:100%;height:100%;display:block}
+.adj{position:absolute;inset:0;z-index:6;cursor:grab;touch-action:none;outline:2px solid #E3D5BF;outline-offset:-2px}
+.adj.dragging{cursor:grabbing}
+:has(> .adj) > .tools{visibility:hidden}
+.adj-hint{position:absolute;top:10px;left:50%;transform:translateX(-50%);background:rgba(10,10,10,.78);color:#F5F2EC;font:500 12px/1.2 var(--body);padding:7px 10px;pointer-events:none;white-space:nowrap}
+.adj-bar{position:absolute;left:8px;right:8px;bottom:8px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;background:rgba(255,255,255,.95);color:#0A0A0A;padding:8px 10px;cursor:default}
+.adj-bar label{flex:1 1 140px;display:flex;gap:8px;align-items:center;font:500 12px/1 var(--body)}
+.adj-bar input{flex:1;min-width:0;accent-color:#0A0A0A}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(92px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--paper);padding:10px 14px;font-size:14px;line-height:1.4;z-index:21;width:max-content;max-width:calc(100% - 32px)}
+</style>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="name" href="#top">Priya</a>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#work">Selected work</a>
+    </div>
+    <a class="cta" href="#contact">Work with me</a>
+  </div>
+</nav>
+
+<!-- 1 · HERO -->
+<section class="deep hero" id="top">
+  <div class="hero-bg" data-slot="hero"></div>
+  <div class="hero-tools" id="hero-tools"></div>
+  <div class="wrap">
+    <p class="handle"><a href="https://www.instagram.com/suitelifediary/" target="_blank" rel="noopener" style="text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:4px">@suitelifediary ↗</a></p>
+    <h1>Suite Life Diary</h1>
+    <p class="page">Stories that feel like being there.</p>
+    <div class="rule"></div>
+    <p class="tag">Capturing luxury hotel experiences</p>
+    <a class="btn" href="#contact">Let's connect →</a>
+  </div>
+</section>
+
+<!-- 2 · ABOUT -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div>
+      <p class="label">About me</p>
+      <h2>Hi, I'm Priya.</h2>
+      <p>I'm a content creator based in Bengaluru, focused on luxury, boutique and one-of-a-kind hotels. Through Suite Life Diary, I share the stays that stand out: the rooms, the food, the setting and the small details that make a place memorable.</p>
+      <div class="mission">
+        <p class="label">My mission</p>
+        <p class="big">To turn extraordinary stays into visual stories that make you feel like you're already there.</p>
+      </div>
+    </div>
+    <div class="me" aria-label="Photos of Priya">
+      <div class="ph" data-slot="about.0" data-alt="Priya"><span>Your photo 1</span></div>
+      <div class="ph" data-slot="about.1" data-alt="Priya"><span>Photo 2</span></div>
+      <div class="ph" data-slot="about.2" data-alt="Priya"><span>Photo 3</span></div>
+      <div class="ph" data-slot="about.3" data-alt="Priya"><span>Photo 4</span></div>
+      <div class="ph" data-slot="about.4" data-alt="Priya"><span>Photo 5</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · SERVICES -->
+<section class="deep" id="services">
+  <div class="wrap">
+    <div class="head">
+      <p class="label">My services</p>
+      <h2>What I offer</h2>
+    </div>
+    <div class="services">
+      <div class="svc">
+        <div class="img" data-slot="svc.0" data-alt="Professional photography"><span>Add photo</span></div>
+        <div class="txt"><h3>Professional photography</h3>
+        <p>Stunning photography that showcases luxury and elegance</p></div>
+      </div>
+      <div class="svc">
+        <div class="img" data-slot="svc.1" data-alt="Social media"><span>Add photo</span></div>
+        <div class="txt"><h3>Social media</h3>
+        <p>Captivating content tailored for your social media platforms</p></div>
+      </div>
+      <div class="svc">
+        <div class="img" data-slot="svc.2" data-alt="Brand collaborations"><span>Add photo</span></div>
+        <div class="txt"><h3>Brand collaborations</h3>
+        <p>Engaging visuals that elevate your hotel's presence</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · HOTELS & RESORTS -->
+<section id="work">
+  <div class="wrap">
+    <div class="head">
+      <p class="label">Hotels &amp; resorts</p>
+      <h2>Stays I've captured</h2>
+    </div>
+    <div class="hotels" id="hotels"></div>
+  </div>
+</section>
+
+<!-- 5 · MOMENTS -->
+<section style="border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="head">
+      <p class="label">Photos</p>
+      <h2>Moments</h2>
+      <p class="intro">A few of my favourite frames from travels and stays.</p>
+    </div>
+    <div class="moments">
+      <div data-slot="mom.0" data-alt="Moment from Suite Life Diary" class="m p"><span class="tagm">Photo</span></div>
+      <div data-slot="mom.1" data-alt="Moment from Suite Life Diary" class="m p"><span class="tagm">Photo</span></div>
+      <div data-slot="mom.2" data-alt="Moment from Suite Life Diary" class="m p"><span class="tagm">Photo</span></div>
+      <div data-slot="mom.3" data-alt="Moment from Suite Life Diary" class="m p"><span class="tagm">Photo</span></div>
+      <div data-slot="mom.4" data-alt="Moment from Suite Life Diary" class="m p"><span class="tagm">Photo</span></div>
+      <div data-slot="mom.5" data-alt="Moment from Suite Life Diary" class="m p"><span class="tagm">Photo</span></div>
+      <div data-slot="mom.6" data-alt="Moment from Suite Life Diary" class="m p"><span class="tagm">Photo</span></div>
+      <div data-slot="mom.7" data-alt="Moment from Suite Life Diary" class="m p"><span class="tagm">Photo</span></div>
+      <div data-slot="mom.8" data-alt="Moment from Suite Life Diary" class="m p"><span class="tagm">Photo</span></div>
+      <div data-slot="mom.9" data-alt="Moment from Suite Life Diary" class="m p"><span class="tagm">Photo</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · TESTIMONIALS -->
+<section style="border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="head">
+      <p class="label">Testimonials</p>
+      <h2>Kind words</h2>
+    </div>
+    <div class="quotes">
+      <div class="q"><blockquote>We loved the way our property was captured through such thoughtful and aesthetic storytelling. The content beautifully highlighted the little details that make a stay with us special, creating a visual experience that feels both inviting and authentic.</blockquote><p class="who">Suryagarh<br>Jaisalmer</p></div>
+      <div class="q"><blockquote>The content perfectly captured the essence of a peaceful escape into nature. From the surrounding greenery to the unique treehouse experience, every frame felt immersive, beautifully composed, and true to the spirit of our property.</blockquote><p class="who">Elevé<br>Goa</p></div>
+      <div class="q"><blockquote>A lovely creative approach to showcasing the luxury hospitality experience. The visuals felt elegant yet natural, capturing the ambience, design, and slower moments that make a stay memorable. We truly appreciate the attention to detail.</blockquote><p class="who">Cabo Serai<br>Goa</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · GET IN TOUCH -->
+<section class="deep contact" id="contact">
+  <div class="wrap">
+    <div>
+      <p class="label">Get in touch</p>
+      <h2 style="margin-top:14px">Let’s tell the <em>story</em><br>of your property</h2>
+    </div>
+    <div class="fields">
+      <div class="field"><span class="label">Email</span><a class="val" id="email" href="mailto:priyakumari1657@gmail.com?subject=Collaboration%20with%20Suite%20Life%20Diary">priyakumari1657@gmail.com</a></div>
+      <div class="field"><span class="label">Instagram</span><a class="val" id="ig" href="https://www.instagram.com/suitelifediary/" target="_blank" rel="noopener">@suitelifediary</a></div>
+      <div class="field"><span class="label">Based in</span><span class="val">Bengaluru, India · open to travel</span></div>
+    </div>
+  </div>
+</section>
+<footer><div class="wrap"><a href="https://www.instagram.com/suitelifediary/" target="_blank" rel="noopener" style="text-decoration:none;border-bottom:1px solid var(--accent)">@suitelifediary ↗</a><span>Priya · Hotel content creator</span></div></footer>
+
+<div class="editbar" id="editbar" hidden>
+  <span id="ebmsg">Only you can see this bar.</span>
+  <button type="button" id="ebtoggle">Edit photos</button>
+  <button type="button" id="ebdiscard" hidden>Discard</button>
+  <button type="button" id="ebsave" class="primary" hidden>Save &amp; publish</button>
+</div>
+<div class="toast" id="toast" role="status" hidden></div>
+<script type="application/json" id="state">{"hero": {"id": "aea6285984340d2aee720e5bc25e30fc", "kind": "image"}, "about": [{"id": "4266a0311fed3f01d453cf35f3e13e4a", "kind": "image", "x": 25.9, "y": 100, "z": 1.21}, {"id": "833d2931cf50be47039ffd549ad783cc", "kind": "image"}, {"id": "077397358708dd378aa5d25b717993ef", "kind": "image"}, {"id": "59106f417f5f585a7b9d46c23f229f9e", "kind": "image", "x": 50, "y": 62, "z": 1.14}, {"id": "b8a25525e46e39faf936ea873ad62164", "kind": "image", "z": 1.56, "x": 40.3, "y": 65.7}], "svc": [{"id": "94193e60d519106121a30dcbb11ce948", "kind": "image"}, {"id": "1143dbc9991a4780dd31f7bf82444cae", "kind": "image"}, {"id": "11a534a61ad907f3683922c6ea2d63c1", "kind": "image", "x": 63.2, "y": 100}], "hotels": [{"name": "Suryagarh", "where": "Jaisalmer", "photos": [{"id": "ad77e8a1a190667d8519b9d9a7beb4d5", "kind": "image", "x": 47.5, "y": 79.4}, {"id": "60ab60778899baded084e3ce676a6fa5", "kind": "image"}, {"id": "c046cf67ff03ec891c600e13c9ef5bfa", "kind": "image", "x": 42.4, "y": 100}, {"id": "2289183970dbc92244e4bf2f24324de7", "kind": "image", "x": 29.4, "y": 58.1}, {"id": "4c2b19439c454fbc1798e957cd940d2b", "kind": "image", "x": 46.8, "y": 6}, {"id": "c85a13c97ec9fc7ae060aa8358f34e90", "kind": "image"}, {"id": "d3cddfffc9f98dcb331eb42658a06d13", "kind": "image"}, {"id": "04ae0c58b181c8bc3f1dca0aa127dbda", "kind": "image", "x": 57, "y": 87.2}, {"id": "0a4a621ac43c0f51640bcf9a14b9177c", "kind": "image", "f": 1}, {"id": "85fbc806a25faa3e50c94f90ecca6a6e", "kind": "image"}], "about": "A timeless desert palace where royal Rajasthani heritage meets understated luxury. From golden sandstone architecture to intimate cultural experiences, every corner tells a story worth capturing."}, {"name": "The Machan", "where": "Lonavala", "photos": [{"id": "162684eebf0e55883c6010b168317c5b", "kind": "image"}, {"id": "e8329f8c9562f9c09f6aef19d1c15a87", "kind": "image"}, {"id": "c1b37db9bedde65a38a810cc032bb8c6", "kind": "image"}, {"id": "00e88bf685a94b8b4749cc853a798c4d", "kind": "image", "x": 49.1, "y": 91.9}, {"id": "911c35e0ae73270f73b629670929f30a", "kind": "image"}, {"id": "4a1b180a4c284268b7b576a9ca8c9635", "kind": "image"}, {"id": "6fca8bb6d93fae2695a4d7b38af247be", "kind": "image", "x": 49.7, "y": 17.9}, {"id": "8a917bf56f5811cd9b9bfb10b82efbc4", "kind": "image", "x": 46.1, "y": 9.8}, null, null], "about": "A secluded forest escape where elevated treehouses blend seamlessly with nature. Think misty mornings, lush green canopies, and slow, mindful moments surrounded by wilderness."}, {"name": "Alila Diwa", "where": "Goa", "photos": [{"id": "ce6057f260c043c567b25e86fc5f00c5", "kind": "image"}, {"id": "1107176125ac4d140edd4b4f4d3f8d8c", "kind": "image", "x": 42.4, "y": 88.7}, {"id": "a824b6538e77fbef060bd4b476ad463e", "kind": "image", "x": 51.6, "y": 69.1}, {"id": "cb3e4e6c20a1bf7bb031eb7c94c518ab", "kind": "image"}, {"id": "ff5aeab363bc90ace8cef55d1db63ff1", "kind": "image"}, {"id": "ddf4eff461078c4a92e9bf871053c146", "kind": "image", "x": 61.4, "y": 70.3}, {"id": "ec57ad40f738d6503a99046d788bb60f", "kind": "image"}, {"id": "4bae0f79ef62e8f6df806194a1f4482f", "kind": "image"}, {"id": "b90e7788340c9f520576797972753917", "kind": "image"}, null], "about": "A tropical sanctuary that celebrates contemporary design, serene landscapes, and slow luxury. From tranquil poolside moments to thoughtfully curated experiences, it’s a beautiful blend of comfort and calm."}, {"name": "Taj Fort Aguada", "where": "Goa", "photos": [{"id": "ae1e8c4d1a5e76813a86f4a4ccbd5b66", "kind": "image"}, {"id": "0236966c09bef0b14b8ee4a0e5e632e6", "kind": "image"}, {"id": "ae8c46802d7eb34806f868a0845c1d22", "kind": "image"}, {"id": "5c92d6fbd64ea1448315152f7d62e8d8", "kind": "image", "x": 49.8, "y": 100}, {"id": "3275986e6a1ea670d953555fa77116ea", "kind": "image"}, {"id": "1c0fbee86db60df3e3ee6c2899518803", "kind": "image"}, {"id": "c449502b87cad132f955278dc81c504c", "kind": "image"}, {"id": "69bedef1ea5e78be11d35acc63063e98", "kind": "image"}, {"id": "2b2f05dff2ac33e1b9b4b5e60e9cb2a5", "kind": "image"}, {"id": "4cfee48717aac49a23a20908e4334310", "kind": "image"}], "about": "Where the charm of Goa meets the timeless elegance of Taj hospitality. Overlooking the Arabian Sea, this coastal retreat offers breathtaking sunsets, lush surroundings, and unforgettable oceanfront moments."}, {"name": "Elevé", "where": "Goa", "photos": [{"id": "c9658aba8d33825b1ef2949384328e1f", "kind": "image", "x": 50, "y": 32.6}, {"id": "b844b62e306a27bfac674b2c8dad5480", "kind": "image", "x": 46.5, "y": 46.7}, {"id": "80598998ace13f198087cccac5020d22", "kind": "image", "x": 49.2, "y": 75.2}, {"id": "fdc1cb7fac196de1004082afc8c8398b", "kind": "image"}, {"id": "3ee21850f7e9699322cb5240410302cc", "kind": "image"}, {"id": "6b8afd6d20be0eb3ccfdd645945c5122", "kind": "image"}, {"id": "03e98d4c862104d73b1d9c9ed7318695", "kind": "image"}, {"id": "c2815e94e77a1a425e9436fbeb3f724a", "kind": "image", "x": 49.9, "y": 70.3}, {"id": "5efa691137a19d31471e66e78a8e7f66", "kind": "image"}, {"id": "d5a2bd10b096d652d09b008f0a8368cd", "kind": "image"}], "about": "A distinctive stay defined by thoughtful details, curated aesthetics, and an intimate sense of luxury. A space where design-led storytelling and immersive visual experiences come together beautifully."}, {"name": "Cabo Serai", "where": "GOA", "photos": [{"id": "e19cbd01ce1bad70ba971f03b7d52d10", "kind": "image", "x": 48.4, "y": 69.3}, {"id": "a058d253192a5b0109201738c1701efb", "kind": "image"}, {"id": "2181a594a9eb30488361611ba24b901a", "kind": "image", "x": 50.7, "y": 81}, {"id": "78858b7c99eb463dfc6b6efabfbca458", "kind": "image"}, {"id": "25c730d0f36284d4419d47a49bdbc3eb", "kind": "image"}, {"id": "fb662f1e14ca063bb0587a865cd0b03e", "kind": "image", "x": 49.7, "y": 75.9}, {"id": "b7a88a0acb3db131b2551af7878004e1", "kind": "image"}, {"id": "5dbb48bef19590b513a614e9bc281624", "kind": "image"}, {"id": "54e16f0b3898abdea5a7a23cc2ec9df2", "kind": "image"}, {"id": "16ff12dc4f9b70912f7b3dae99d94f06", "kind": "image"}], "about": "A hidden coastal retreat where barefoot luxury meets the raw beauty of nature. With ocean views, earthy textures, and peaceful surroundings, it captures the art of slowing down and reconnecting with yourself."}], "mom": [{"id": "2d420dae01f2d0bf5253838c4d0411d5", "kind": "image"}, {"id": "4cc7bfb1a14d6b172840da38decbd927", "kind": "image"}, {"id": "07c18a45231eea40944798f33a570719", "kind": "image"}, {"id": "193621fbd0780bbcfe5eaa51b499124a", "kind": "image"}, {"id": "b3911b612f31bec5ec412942d35f5c58", "kind": "image", "x": 47.1, "y": 90.2}, {"id": "e44de67f3bd2ba84a64ab389e823951f", "kind": "image", "x": 50, "y": 47.9}, {"id": "a38613ddbbfe32123ef8a60f8a37476a", "kind": "image"}, {"id": "df29b23ec2278df80a9bbba702fba388", "kind": "image"}, {"id": "cfb839fddd3776e8b819cfdcc57f2499", "kind": "image"}, {"id": "454372d85d79500692b328ea1c446b17", "kind": "image"}], "demo": true}</script><script type="application/json" id="src">{"a": "\u003ctitle>Suite Life Diary\u003c/title>\n\u003cmeta name=\"claude:viewport-fit-sides\" content=\"cover\">\n\u003clink rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n\u003clink rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n\u003clink rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Figtree:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap\">\n\u003cstyle>\n/* Layout: couture monochrome — black bands alternate with soft white pages; beige used for accents, rules and controls */\n:root{\n  --paper:#F7F5F2; --surface:#FFFFFF; --ink:#0A0A0A; --muted:#5F5A55;\n  --deep:#0A0A0A; --accent:#E3D5BF; --accent-ink:#0A0A0A; --on-accent:#0A0A0A; --line:#E2DED8; --on-deep:#F5F2EC; --slot:#ECE8E2;\n  --display:\"Playfair Display\", \"Didot\", Georgia, serif;\n  --body:\"Playfair Display\", Georgia, serif;\n  --mono:\"Playfair Display\", Georgia, serif;\n}\n@media (prefers-color-scheme: dark){:root:not([data-theme=\"light\"]){\n  --paper:#0A0A0A; --surface:#141414; --ink:#F2EFEA; --muted:#9E9890;\n  --deep:#000000; --accent:#E3D5BF; --accent-ink:#E3D5BF; --on-accent:#0A0A0A; --line:#2A2A2A; --on-deep:#F5F2EC; --slot:#1C1C1C; color-scheme:dark}}\n:root[data-theme=\"dark\"]{\n  --paper:#0A0A0A; --surface:#141414; --ink:#F2EFEA; --muted:#9E9890;\n  --deep:#000000; --accent:#E3D5BF; --accent-ink:#E3D5BF; --on-accent:#0A0A0A; --line:#2A2A2A; --on-deep:#F5F2EC; --slot:#1C1C1C; color-scheme:dark}\n\n*{box-sizing:border-box}\nbody{background:var(--paper);color:var(--ink);font:400 16px/1.65 var(--body);-webkit-font-smoothing:antialiased}\n.wrap{max-width:1100px;margin:0 auto;padding-left:max(20px, env(safe-area-inset-left,0px));padding-right:max(20px, env(safe-area-inset-right,0px))}\nsection > .wrap{padding-block:clamp(60px,8vw,104px)}\nh1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;line-height:1.08}\np{margin:0}\na{color:inherit}\n.label{font:500 11.5px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--accent-ink)}\n.deep .label{color:var(--accent)}\n:focus-visible{outline:2px solid var(--accent);outline-offset:3px}\n.deep{background:var(--deep);color:var(--on-deep)}\n.head{display:grid;gap:14px;margin-bottom:44px;max-width:640px}\n.head h2{font-size:clamp(32px,4.4vw,52px)}\n.head p.intro{color:var(--muted)}\n.deep .head p.intro{color:color-mix(in srgb,var(--on-deep) 72%,transparent)}\n.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:0;letter-spacing:.12em;text-transform:uppercase;font-size:13px;font:500 15px/1 var(--body);text-decoration:none;border:1px solid var(--accent);background:var(--accent);color:var(--on-accent);cursor:pointer}\n.btn:hover{filter:brightness(1.07)}\n.todo{color:var(--accent-ink);border-bottom:1px dashed var(--accent-ink)}\n.deep .todo{color:var(--accent);border-color:var(--accent)}\n\n/* 1 · HERO */\n.hero .wrap{padding-block:clamp(84px,14vw,168px);display:grid;justify-items:center;text-align:center;gap:0}\n.hero .handle{font:500 16px/1 var(--mono);letter-spacing:.08em;text-transform:none;color:var(--accent)}\n.hero h1{font-size:clamp(52px,11vw,144px);font-weight:700;letter-spacing:-.02em;line-height:.98;margin-top:22px}\n.hero .page{font:italic 400 clamp(20px,2.8vw,30px)/1.3 var(--display);margin-top:20px;color:color-mix(in srgb,var(--on-deep) 88%,transparent)}\n\n/* TOP NAV */\nbody::before{content:\"\";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--deep)}\n.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--deep);color:var(--on-deep);border-bottom:1px solid color-mix(in srgb,var(--on-deep) 14%,transparent)}\n.nav .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px 24px;padding-block:16px}\n.nav .name{font:700 22px/1 var(--display);text-decoration:none;justify-self:start}\n.nav .links{display:flex;gap:clamp(18px,3vw,36px)}\n.nav .links a,.nav .cta{font:500 12px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;text-decoration:none}\n.nav .links a{color:color-mix(in srgb,var(--on-deep) 78%,transparent);padding-block:6px;border-bottom:1px solid transparent}\n.nav .links a:hover{color:var(--on-deep);border-color:var(--accent)}\n.nav .cta{justify-self:end;border:1px solid var(--accent);padding:10px 14px;color:var(--on-deep)}\n.nav .cta:hover{background:var(--accent);color:var(--on-accent)}\nsection{scroll-margin-top:64px}\n@media (max-width:720px){\n  .nav .wrap{grid-template-columns:1fr auto;padding-block:12px}\n  .nav .links{grid-column:1/-1;grid-row:2;justify-content:space-between;gap:12px}\n  .nav .links a{font-size:11px;letter-spacing:.12em}\n  section{scroll-margin-top:100px}\n}\n.hero .rule{width:64px;height:1px;background:var(--accent);margin:30px 0}\n.hero .tag{font:500 13px/1.4 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:color-mix(in srgb,var(--on-deep) 78%,transparent)}\n.hero .btn{margin-top:38px}\n\n/* 2 · ABOUT */\n.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px)}\n.about-grid > div{display:grid;gap:16px;align-content:start;min-width:0}\n.about-grid h2{font-size:clamp(30px,3.8vw,44px)}\n.about-grid p{color:var(--muted);max-width:52ch}\n.about-grid .mission p.big{font:italic 400 clamp(22px,2.6vw,30px)/1.4 var(--display);color:var(--ink)}\n.mission{border-left:1px solid var(--accent);padding-left:clamp(20px,3vw,36px);margin-top:20px}\n.about-grid{align-items:center}\n.me{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:clamp(120px,15vw,200px);gap:12px;min-width:0}\n.me .ph{background:linear-gradient(150deg,var(--slot),color-mix(in srgb,var(--slot) 72%,var(--accent)));display:grid;place-items:center;color:var(--muted);overflow:hidden;min-width:0}\n.me .ph:first-child{grid-row:span 2}\n.me .ph span{font:500 10.5px/1.3 var(--mono);letter-spacing:.14em;text-transform:uppercase;border:1px dashed currentColor;padding:6px 9px}\n.me .ph img{width:100%;height:100%;object-fit:cover}\n.ph:has(img[style*=\"contain\"]),.svc .img:has([style*=\"contain\"]),.slide:has([style*=\"contain\"]),.m:has([style*=\"contain\"]){background:var(--deep)}\n\n/* 3 · SERVICES */\n.services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}\n.svc{border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);display:flex;flex-direction:column;min-width:0}\n.svc .img{aspect-ratio:4/3;max-width:100%;display:grid;place-items:center;overflow:hidden;color:color-mix(in srgb,var(--on-deep) 60%,transparent);background:linear-gradient(150deg,color-mix(in srgb,var(--on-deep) 12%,var(--deep)),color-mix(in srgb,var(--accent) 22%,var(--deep)))}\n.svc .img span{font:500 10.5px/1.3 var(--mono);letter-spacing:.14em;text-transform:uppercase;border:1px dashed currentColor;padding:6px 9px}\n.svc .img img{width:100%;height:100%;object-fit:cover}\n.svc .txt{padding:26px 26px 32px;display:grid;gap:12px}\n.svc .ico{width:40px;height:40px;color:var(--accent)}\n.svc h3{font-size:26px}\n.svc p{color:color-mix(in srgb,var(--on-deep) 74%,transparent);font-size:15.5px}\n\n/* 4 · HOTELS — 2 per row, each a carousel */\n.hotels{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(20px,3vw,36px)}\n.hotel{background:var(--surface);border:1px solid var(--line);min-width:0}\n.carousel{position:relative}\n.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none}\n.track::-webkit-scrollbar{display:none}\n.slide{flex:0 0 100%;scroll-snap-align:start;aspect-ratio:4/3;max-width:100%;display:grid;place-items:center;\n  background:linear-gradient(135deg,var(--slot),color-mix(in srgb,var(--slot) 70%,var(--accent)));color:var(--muted)}\n.slide:not(:has(img,video)){background:linear-gradient(135deg,color-mix(in srgb,var(--slot) calc(100% - var(--s,0)*7%),var(--accent)),color-mix(in srgb,var(--slot) calc(70% - var(--s,0)*4%),var(--deep)))}\n.slide span{font:500 11px/1.3 var(--mono);letter-spacing:.14em;text-transform:uppercase;border:1px dashed currentColor;padding:7px 11px}\n.slide img{width:100%;height:100%;object-fit:cover}\n.arrow{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:0;cursor:pointer;\n  background:color-mix(in srgb,var(--surface) 88%,transparent);color:var(--ink);display:grid;place-items:center;box-shadow:0 2px 10px rgba(10,16,30,.18)}\n.arrow svg{width:18px;height:18px}\n.arrow.prev{left:12px}.arrow.next{right:12px}\n.arrow:disabled{opacity:.35;cursor:default}\n.dots{position:absolute;bottom:12px;left:0;right:0;display:flex;justify-content:center;gap:6px}\n.dots i{width:6px;height:6px;border-radius:50%;background:color-mix(in srgb,var(--ink) 30%,transparent)}\n.dots i.on{background:var(--accent);width:18px;border-radius:3px}\n.hotel .meta{padding:18px 22px 22px;display:grid;gap:10px}\n.hotel .meta .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}\n.hotel .desc{color:var(--muted);font-size:15px;line-height:1.6;max-width:60ch}\n.hotel .desc.demo{font-style:italic;opacity:.75}\n.dots i.on{background:var(--ink)}\n.hotel h3{font-size:clamp(22px,2.4vw,28px)}\n.hotel .where{font:400 12px/1.3 var(--mono);color:var(--muted);letter-spacing:.08em;text-transform:uppercase;text-align:right}\n\n/* 5 · MOMENTS — videos and photos */\n.moments{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-flow:dense;gap:14px}\n.m{position:relative;background:linear-gradient(160deg,var(--slot),color-mix(in srgb,var(--slot) 75%,var(--deep)));display:grid;place-items:center;color:var(--muted);min-width:0;overflow:hidden}\n.m.v{aspect-ratio:9/16;grid-row:span 2}\n.m.p{aspect-ratio:1/1}\n.m.wide{grid-column:span 2;aspect-ratio:auto}\n.m .play{width:56px;height:56px;border-radius:50%;border:1px solid currentColor;display:grid;place-items:center}\n.m .play svg{width:18px;height:18px;margin-left:3px}\n.m .tagm{position:absolute;left:12px;top:12px;font:500 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;background:var(--surface);color:var(--ink);padding:6px 8px}\n.m.v .tagm{background:var(--accent);color:var(--on-accent)}\n\n/* 6 · TESTIMONIALS */\n.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}\n.q{background:var(--surface);border:1px solid var(--line);padding:30px 26px;display:grid;gap:22px;align-content:space-between;min-width:0}\n.q blockquote{margin:0;font:italic 400 20px/1.5 var(--display);color:var(--muted)}\n.q blockquote::before{content:\"\\201C\";display:block;font:400 54px/0.6 var(--display);color:var(--accent);margin-bottom:12px;font-style:normal}\n.q .who{font:500 12px/1.5 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}\n\n/* 7 · CONTACT */\n.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,72px);align-items:center}\n.contact h2{font-size:clamp(38px,6vw,68px)}\n.contact h2 em{color:var(--accent)}\n.contact .sub{margin-top:18px;max-width:42ch;color:color-mix(in srgb,var(--on-deep) 78%,transparent)}\n.fields{border:1px solid color-mix(in srgb,var(--accent) 50%,transparent)}\n.field{display:grid;grid-template-columns:1fr auto;gap:6px 14px;align-items:center;padding:20px 22px;border-bottom:1px solid color-mix(in srgb,var(--accent) 28%,transparent)}\n.field:last-child{border-bottom:0}\n.field .label{grid-column:1/-1}\n.field .val{font:400 21px/1.3 var(--display);word-break:break-word;min-width:0;text-decoration:none}\na.val{justify-self:start;border-bottom:1px solid var(--accent);padding-bottom:2px}\na.val:hover{color:var(--accent)}\n#ig::after{content:\" \\2197\";font-size:.8em;color:var(--accent)}\n@media (max-width:600px){\n  .field{padding:16px 16px;gap:6px 10px}\n  .field .val{font-size:clamp(14px,4.3vw,19px)}\n  #email{white-space:nowrap;letter-spacing:-.01em}\n  .copy{padding:8px 9px}\n}\n.copy{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;background:none;border:1px solid color-mix(in srgb,var(--on-deep) 35%,transparent);color:inherit;padding:9px 11px;cursor:pointer;border-radius:0}\n.copy:hover{border-color:var(--accent)}\nfooter{background:var(--deep);color:color-mix(in srgb,var(--on-deep) 55%,transparent);border-top:1px solid color-mix(in srgb,var(--accent) 20%,transparent)}\nfooter .wrap{padding-block:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font:400 12px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase}\nfooter a{text-transform:none;letter-spacing:.04em;font-size:13px}\n\n@media (max-width:860px){\n  .about-grid,.contact .wrap{grid-template-columns:1fr}\n  .services,.quotes{grid-template-columns:1fr}\n  .moments{grid-template-columns:repeat(2,1fr)}\n}\n@media (max-width:600px){ .hotels{grid-template-columns:1fr} }\n/* Moments: an editorial collage of 10 photos in mixed sizes (big squares, tall and small tiles) */\n.moments{gap:12px;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(110px,12.5vw,160px);grid-template-rows:none;\n  grid-template-areas:\"a a b c\" \"a a d c\" \"e f f g\" \"e f f h\" \"i i j h\" \"i i j h\"}\n.moments .m.p{aspect-ratio:auto;min-height:0}\n.moments [data-slot=\"mom.0\"]{grid-area:a}.moments [data-slot=\"mom.1\"]{grid-area:b}.moments [data-slot=\"mom.2\"]{grid-area:c}.moments [data-slot=\"mom.3\"]{grid-area:d}.moments [data-slot=\"mom.4\"]{grid-area:e}.moments [data-slot=\"mom.5\"]{grid-area:f}.moments [data-slot=\"mom.6\"]{grid-area:g}.moments [data-slot=\"mom.7\"]{grid-area:h}.moments [data-slot=\"mom.8\"]{grid-area:i}.moments [data-slot=\"mom.9\"]{grid-area:j}\n.moments.partial{grid-template-areas:none}\n.moments.partial .m{grid-area:auto}\n@media (max-width:860px){\n  .moments{grid-template-columns:repeat(2,1fr);grid-auto-rows:clamp(100px,32vw,150px);\n    grid-template-areas:\"a a\" \"a a\" \"b c\" \"d c\" \"e g\" \"e h\" \"f f\" \"f f\" \"i j\" \"i j\"}\n}\n\n@media (prefers-reduced-motion:reduce){ .track{scroll-behavior:auto} }\n\n/* MEDIA + EDITING */\n.hero{position:relative;overflow:hidden}\n.hero-bg{position:absolute;inset:0;overflow:hidden}\n/* Default backdrop until a photo is uploaded: an illustration of a balcony looking out to sea at dusk (not a photograph) */\n.hero-bg:not(.has){background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.15) 40%,rgba(0,0,0,.45)),url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900' preserveAspectRatio='xMidYMid slice'%3E %3Cdefs%3E %3ClinearGradient id='sky' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23050506'/%3E%3Cstop offset='.6' stop-color='%2317140F'/%3E%3Cstop offset='1' stop-color='%233A3024'/%3E%3C/linearGradient%3E %3ClinearGradient id='sea' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%231C1813'/%3E%3Cstop offset='1' stop-color='%23030303'/%3E%3C/linearGradient%3E %3CradialGradient id='glow' cx='1270' cy='520' r='460' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23E3D5BF' stop-opacity='.38'/%3E%3Cstop offset='.35' stop-color='%23E3D5BF' stop-opacity='.1'/%3E%3Cstop offset='1' stop-color='%23E3D5BF' stop-opacity='0'/%3E%3C/radialGradient%3E %3Cpattern id='bal' width='64' height='170' patternUnits='userSpaceOnUse' x='0' y='718'%3E %3Crect x='496' y='0' width='12' height='170' fill='%23000'/%3E%3Cellipse cx='32' cy='60' rx='15' ry='34' fill='%23000'/%3E%3Cellipse cx='32' cy='128' rx='11' ry='18' fill='%23000'/%3E%3C/pattern%3E %3C/defs%3E %3Crect width='1600' height='522' fill='url%28%23sky%29'/%3E %3Crect y='520' width='1600' height='380' fill='url%28%23sea%29'/%3E %3Crect width='1600' height='900' fill='url%28%23glow%29'/%3E %3Ccircle cx='1270' cy='522' r='54' fill='%23E3D5BF' opacity='.42'/%3E %3Crect y='520' width='1600' height='900' fill='url%28%23sea%29' opacity='.0'/%3E %3Crect y='521' width='1600' height='1.5' fill='%23E3D5BF' opacity='.35'/%3E %3Crect x='1125' y='528' width='290' height='3' rx='1' fill='%23E3D5BF' opacity='0.42'/%3E%3Crect x='1134' y='539' width='272' height='2' rx='1' fill='%23E3D5BF' opacity='0.38'/%3E%3Crect x='1143' y='550' width='255' height='2' rx='1' fill='%23E3D5BF' opacity='0.34'/%3E%3Crect x='1150' y='561' width='239' height='3' rx='1' fill='%23E3D5BF' opacity='0.31'/%3E%3Crect x='1158' y='572' width='224' height='2' rx='1' fill='%23E3D5BF' opacity='0.28'/%3E%3Crect x='1165' y='583' width='211' height='2' rx='1' fill='%23E3D5BF' opacity='0.25'/%3E%3Crect x='1171' y='594' width='198' height='3' rx='1' fill='%23E3D5BF' opacity='0.22'/%3E%3Crect x='1177' y='605' width='186' height='2' rx='1' fill='%23E3D5BF' opacity='0.20'/%3E%3Crect x='1182' y='616' width='175' height='2' rx='1' fill='%23E3D5BF' opacity='0.18'/%3E%3Crect x='1187' y='627' width='165' height='3' rx='1' fill='%23E3D5BF' opacity='0.16'/%3E%3Crect x='1192' y='638' width='156' height='2' rx='1' fill='%23E3D5BF' opacity='0.15'/%3E%3Crect x='1196' y='649' width='147' height='2' rx='1' fill='%23E3D5BF' opacity='0.13'/%3E%3Crect x='1201' y='660' width='139' height='3' rx='1' fill='%23E3D5BF' opacity='0.12'/%3E%3Crect x='1204' y='671' width='131' height='2' rx='1' fill='%23E3D5BF' opacity='0.11'/%3E%3Crect x='1208' y='682' width='124' height='2' rx='1' fill='%23E3D5BF' opacity='0.10'/%3E%3Crect x='1211' y='693' width='118' height='3' rx='1' fill='%23E3D5BF' opacity='0.09'/%3E%3Crect x='1214' y='704' width='111' height='2' rx='1' fill='%23E3D5BF' opacity='0.08'/%3E%3Crect x='1217' y='715' width='106' height='2' rx='1' fill='%23E3D5BF' opacity='0.07'/%3E %3Crect y='700' width='1600' height='20' fill='%23000'/%3E %3Crect y='690' width='1600' height='12' fill='%230A0A0A'/%3E %3Crect y='718' width='1600' height='172' fill='url%28%23bal%29'/%3E %3Crect y='880' width='1600' height='20' fill='%23000'/%3E %3C/svg%3E\") center bottom/cover no-repeat,#000}\n.hero-bg img{width:100%;height:100%;object-fit:cover;display:block}\n.hero-bg.has::after{content:\"\";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.35) 45%,rgba(0,0,0,.7))}\n.hero .wrap{position:relative;z-index:1}\n.hero-tools{position:absolute;top:16px;right:max(16px,env(safe-area-inset-right,0px));z-index:3;display:flex;gap:6px}\n.ph,.svc .img,.slide{position:relative}\n.ph video,.svc .img video,.slide video{width:100%;height:100%;object-fit:cover;display:block}\n.m img,.m video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}\n.tools{position:absolute;left:8px;right:8px;bottom:8px;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px;z-index:4}\n.slide .tools{bottom:34px}\n.tools button,.editbar button,.addbtn,.adj-bar button{font:500 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:9px 11px;border:1px solid #0A0A0A;background:#FFFFFF;color:#0A0A0A;cursor:pointer;border-radius:0}\n.tools button.primary,.editbar button.primary,.adj-bar button.primary{background:#0A0A0A;color:#F5F2EC}\n.editbar button:disabled{opacity:.5;cursor:default}\n.editbar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--surface);color:var(--ink);border-top:1px solid var(--line);box-shadow:0 -6px 24px rgba(0,0,0,.12);display:flex;align-items:center;flex-wrap:wrap;gap:10px;\n  padding-top:12px;padding-bottom:calc(12px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}\n.editbar #ebmsg{flex:1 1 220px;font-size:14px;color:var(--muted)}\nbody.has-editbar{padding-bottom:84px}\n.hotel .meta.editing{display:grid;grid-template-columns:1fr 1fr;gap:8px}\n.ed{font:400 20px/1.2 var(--display);border:1px dashed var(--muted);background:transparent;color:var(--ink);padding:6px 8px;min-width:0;width:100%;border-radius:0}\n.ed.where{font:400 12px/1.2 var(--mono);text-transform:uppercase;letter-spacing:.08em}\n.addbtn{grid-column:1/-1;justify-self:start}\ntextarea.ed{grid-column:1/-1;font:400 15px/1.55 var(--body);resize:vertical;min-height:84px}\n.slide{overflow:hidden}\n.ph>img,.ph>video,.svc .img>img,.svc .img>video,.slide>img,.slide>video{position:absolute;inset:0;width:100%;height:100%;display:block}\n.adj{position:absolute;inset:0;z-index:6;cursor:grab;touch-action:none;outline:2px solid #E3D5BF;outline-offset:-2px}\n.adj.dragging{cursor:grabbing}\n:has(> .adj) > .tools{visibility:hidden}\n.adj-hint{position:absolute;top:10px;left:50%;transform:translateX(-50%);background:rgba(10,10,10,.78);color:#F5F2EC;font:500 12px/1.2 var(--body);padding:7px 10px;pointer-events:none;white-space:nowrap}\n.adj-bar{position:absolute;left:8px;right:8px;bottom:8px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;background:rgba(255,255,255,.95);color:#0A0A0A;padding:8px 10px;cursor:default}\n.adj-bar label{flex:1 1 140px;display:flex;gap:8px;align-items:center;font:500 12px/1 var(--body)}\n.adj-bar input{flex:1;min-width:0;accent-color:#0A0A0A}\n.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(92px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--paper);padding:10px 14px;font-size:14px;line-height:1.4;z-index:21;width:max-content;max-width:calc(100% - 32px)}\n\u003c/style>\n\n\u003cnav class=\"nav\" aria-label=\"Main\">\n  \u003cdiv class=\"wrap\">\n    \u003ca class=\"name\" href=\"#top\">Priya\u003c/a>\n    \u003cdiv class=\"links\">\n      \u003ca href=\"#about\">About\u003c/a>\n      \u003ca href=\"#services\">Services\u003c/a>\n      \u003ca href=\"#work\">Selected work\u003c/a>\n    \u003c/div>\n    \u003ca class=\"cta\" href=\"#contact\">Work with me\u003c/a>\n  \u003c/div>\n\u003c/nav>\n\n\u003c!-- 1 · HERO -->\n\u003csection class=\"deep hero\" id=\"top\">\n  \u003cdiv class=\"hero-bg\" data-slot=\"hero\">\u003c/div>\n  \u003cdiv class=\"hero-tools\" id=\"hero-tools\">\u003c/div>\n  \u003cdiv class=\"wrap\">\n    \u003cp class=\"handle\">\u003ca href=\"https://www.instagram.com/suitelifediary/\" target=\"_blank\" rel=\"noopener\" style=\"text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:4px\">@suitelifediary ↗\u003c/a>\u003c/p>\n    \u003ch1>Suite Life Diary\u003c/h1>\n    \u003cp class=\"page\">Stories that feel like being there.\u003c/p>\n    \u003cdiv class=\"rule\">\u003c/div>\n    \u003cp class=\"tag\">Capturing luxury hotel experiences\u003c/p>\n    \u003ca class=\"btn\" href=\"#contact\">Let's connect →\u003c/a>\n  \u003c/div>\n\u003c/section>\n\n\u003c!-- 2 · ABOUT -->\n\u003csection id=\"about\">\n  \u003cdiv class=\"wrap about-grid\">\n    \u003cdiv>\n      \u003cp class=\"label\">About me\u003c/p>\n      \u003ch2>Hi, I'm Priya.\u003c/h2>\n      \u003cp>I'm a content creator based in Bengaluru, focused on luxury, boutique and one-of-a-kind hotels. Through Suite Life Diary, I share the stays that stand out: the rooms, the food, the setting and the small details that make a place memorable.\u003c/p>\n      \u003cdiv class=\"mission\">\n        \u003cp class=\"label\">My mission\u003c/p>\n        \u003cp class=\"big\">To turn extraordinary stays into visual stories that make you feel like you're already there.\u003c/p>\n      \u003c/div>\n    \u003c/div>\n    \u003cdiv class=\"me\" aria-label=\"Photos of Priya\">\n      \u003cdiv class=\"ph\" data-slot=\"about.0\" data-alt=\"Priya\">\u003cspan>Your photo 1\u003c/span>\u003c/div>\n      \u003cdiv class=\"ph\" data-slot=\"about.1\" data-alt=\"Priya\">\u003cspan>Photo 2\u003c/span>\u003c/div>\n      \u003cdiv class=\"ph\" data-slot=\"about.2\" data-alt=\"Priya\">\u003cspan>Photo 3\u003c/span>\u003c/div>\n      \u003cdiv class=\"ph\" data-slot=\"about.3\" data-alt=\"Priya\">\u003cspan>Photo 4\u003c/span>\u003c/div>\n      \u003cdiv class=\"ph\" data-slot=\"about.4\" data-alt=\"Priya\">\u003cspan>Photo 5\u003c/span>\u003c/div>\n    \u003c/div>\n  \u003c/div>\n\u003c/section>\n\n\u003c!-- 3 · SERVICES -->\n\u003csection class=\"deep\" id=\"services\">\n  \u003cdiv class=\"wrap\">\n    \u003cdiv class=\"head\">\n      \u003cp class=\"label\">My services\u003c/p>\n      \u003ch2>What I offer\u003c/h2>\n    \u003c/div>\n    \u003cdiv class=\"services\">\n      \u003cdiv class=\"svc\">\n        \u003cdiv class=\"img\" data-slot=\"svc.0\" data-alt=\"Professional photography\">\u003cspan>Add photo\u003c/span>\u003c/div>\n        \u003cdiv class=\"txt\">\u003ch3>Professional photography\u003c/h3>\n        \u003cp>Stunning photography that showcases luxury and elegance\u003c/p>\u003c/div>\n      \u003c/div>\n      \u003cdiv class=\"svc\">\n        \u003cdiv class=\"img\" data-slot=\"svc.1\" data-alt=\"Social media\">\u003cspan>Add photo\u003c/span>\u003c/div>\n        \u003cdiv class=\"txt\">\u003ch3>Social media\u003c/h3>\n        \u003cp>Captivating content tailored for your social media platforms\u003c/p>\u003c/div>\n      \u003c/div>\n      \u003cdiv class=\"svc\">\n        \u003cdiv class=\"img\" data-slot=\"svc.2\" data-alt=\"Brand collaborations\">\u003cspan>Add photo\u003c/span>\u003c/div>\n        \u003cdiv class=\"txt\">\u003ch3>Brand collaborations\u003c/h3>\n        \u003cp>Engaging visuals that elevate your hotel's presence\u003c/p>\u003c/div>\n      \u003c/div>\n    \u003c/div>\n  \u003c/div>\n\u003c/section>\n\n\u003c!-- 4 · HOTELS & RESORTS -->\n\u003csection id=\"work\">\n  \u003cdiv class=\"wrap\">\n    \u003cdiv class=\"head\">\n      \u003cp class=\"label\">Hotels &amp; resorts\u003c/p>\n      \u003ch2>Stays I've captured\u003c/h2>\n    \u003c/div>\n    \u003cdiv class=\"hotels\" id=\"hotels\">\u003c/div>\n  \u003c/div>\n\u003c/section>\n\n\u003c!-- 5 · MOMENTS -->\n\u003csection style=\"border-top:1px solid var(--line)\">\n  \u003cdiv class=\"wrap\">\n    \u003cdiv class=\"head\">\n      \u003cp class=\"label\">Photos\u003c/p>\n      \u003ch2>Moments\u003c/h2>\n      \u003cp class=\"intro\">A few of my favourite frames from travels and stays.\u003c/p>\n    \u003c/div>\n    \u003cdiv class=\"moments\">\n      \u003cdiv data-slot=\"mom.0\" data-alt=\"Moment from Suite Life Diary\" class=\"m p\">\u003cspan class=\"tagm\">Photo\u003c/span>\u003c/div>\n      \u003cdiv data-slot=\"mom.1\" data-alt=\"Moment from Suite Life Diary\" class=\"m p\">\u003cspan class=\"tagm\">Photo\u003c/span>\u003c/div>\n      \u003cdiv data-slot=\"mom.2\" data-alt=\"Moment from Suite Life Diary\" class=\"m p\">\u003cspan class=\"tagm\">Photo\u003c/span>\u003c/div>\n      \u003cdiv data-slot=\"mom.3\" data-alt=\"Moment from Suite Life Diary\" class=\"m p\">\u003cspan class=\"tagm\">Photo\u003c/span>\u003c/div>\n      \u003cdiv data-slot=\"mom.4\" data-alt=\"Moment from Suite Life Diary\" class=\"m p\">\u003cspan class=\"tagm\">Photo\u003c/span>\u003c/div>\n      \u003cdiv data-slot=\"mom.5\" data-alt=\"Moment from Suite Life Diary\" class=\"m p\">\u003cspan class=\"tagm\">Photo\u003c/span>\u003c/div>\n      \u003cdiv data-slot=\"mom.6\" data-alt=\"Moment from Suite Life Diary\" class=\"m p\">\u003cspan class=\"tagm\">Photo\u003c/span>\u003c/div>\n      \u003cdiv data-slot=\"mom.7\" data-alt=\"Moment from Suite Life Diary\" class=\"m p\">\u003cspan class=\"tagm\">Photo\u003c/span>\u003c/div>\n      \u003cdiv data-slot=\"mom.8\" data-alt=\"Moment from Suite Life Diary\" class=\"m p\">\u003cspan class=\"tagm\">Photo\u003c/span>\u003c/div>\n      \u003cdiv data-slot=\"mom.9\" data-alt=\"Moment from Suite Life Diary\" class=\"m p\">\u003cspan class=\"tagm\">Photo\u003c/span>\u003c/div>\n    \u003c/div>\n  \u003c/div>\n\u003c/section>\n\n\u003c!-- 6 · TESTIMONIALS -->\n\u003csection style=\"border-top:1px solid var(--line)\">\n  \u003cdiv class=\"wrap\">\n    \u003cdiv class=\"head\">\n      \u003cp class=\"label\">Testimonials\u003c/p>\n      \u003ch2>Kind words\u003c/h2>\n    \u003c/div>\n    \u003cdiv class=\"quotes\">\n      \u003cdiv class=\"q\">\u003cblockquote>We loved the way our property was captured through such thoughtful and aesthetic storytelling. The content beautifully highlighted the little details that make a stay with us special, creating a visual experience that feels both inviting and authentic.\u003c/blockquote>\u003cp class=\"who\">Suryagarh\u003cbr>Jaisalmer\u003c/p>\u003c/div>\n      \u003cdiv class=\"q\">\u003cblockquote>The content perfectly captured the essence of a peaceful escape into nature. From the surrounding greenery to the unique treehouse experience, every frame felt immersive, beautifully composed, and true to the spirit of our property.\u003c/blockquote>\u003cp class=\"who\">Elevé\u003cbr>Goa\u003c/p>\u003c/div>\n      \u003cdiv class=\"q\">\u003cblockquote>A lovely creative approach to showcasing the luxury hospitality experience. The visuals felt elegant yet natural, capturing the ambience, design, and slower moments that make a stay memorable. We truly appreciate the attention to detail.\u003c/blockquote>\u003cp class=\"who\">Cabo Serai\u003cbr>Goa\u003c/p>\u003c/div>\n    \u003c/div>\n  \u003c/div>\n\u003c/section>\n\n\u003c!-- 7 · GET IN TOUCH -->\n\u003csection class=\"deep contact\" id=\"contact\">\n  \u003cdiv class=\"wrap\">\n    \u003cdiv>\n      \u003cp class=\"label\">Get in touch\u003c/p>\n      \u003ch2 style=\"margin-top:14px\">Let’s tell the \u003cem>story\u003c/em>\u003cbr>of your property\u003c/h2>\n    \u003c/div>\n    \u003cdiv class=\"fields\">\n      \u003cdiv class=\"field\">\u003cspan class=\"label\">Email\u003c/span>\u003ca class=\"val\" id=\"email\" href=\"mailto:priyakumari1657@gmail.com?subject=Collaboration%20with%20Suite%20Life%20Diary\">priyakumari1657@gmail.com\u003c/a>\u003c/div>\n      \u003cdiv class=\"field\">\u003cspan class=\"label\">Instagram\u003c/span>\u003ca class=\"val\" id=\"ig\" href=\"https://www.instagram.com/suitelifediary/\" target=\"_blank\" rel=\"noopener\">@suitelifediary\u003c/a>\u003c/div>\n      \u003cdiv class=\"field\">\u003cspan class=\"label\">Based in\u003c/span>\u003cspan class=\"val\">Bengaluru, India · open to travel\u003c/span>\u003c/div>\n    \u003c/div>\n  \u003c/div>\n\u003c/section>\n\u003cfooter>\u003cdiv class=\"wrap\">\u003ca href=\"https://www.instagram.com/suitelifediary/\" target=\"_blank\" rel=\"noopener\" style=\"text-decoration:none;border-bottom:1px solid var(--accent)\">@suitelifediary ↗\u003c/a>\u003cspan>Priya · Hotel content creator\u003c/span>\u003c/div>\u003c/footer>\n\n\u003cdiv class=\"editbar\" id=\"editbar\" hidden>\n  \u003cspan id=\"ebmsg\">Only you can see this bar.\u003c/span>\n  \u003cbutton type=\"button\" id=\"ebtoggle\">Edit photos\u003c/button>\n  \u003cbutton type=\"button\" id=\"ebdiscard\" hidden>Discard\u003c/button>\n  \u003cbutton type=\"button\" id=\"ebsave\" class=\"primary\" hidden>Save &amp; publish\u003c/button>\n\u003c/div>\n\u003cdiv class=\"toast\" id=\"toast\" role=\"status\" hidden>\u003c/div>\n", "b": "\u003cscript>\n(function(){\nconst $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];\nconst readJSON=id=>JSON.parse(document.getElementById(id).textContent);\nconst clone=o=>JSON.parse(JSON.stringify(o));\nconst SRC=readJSON('src');\nconst saved=readJSON('state');\nlet state=clone(saved);\nlet editing=false, assets=null, art=null, saving=false;\nconst MB=1024*1024, LIMIT=20*MB;\nconst esc=s=>String(s==null?'':s).replace(/[&\u003c>\"]/g,c=>({'&':'&amp;','\u003c':'&lt;','>':'&gt;','\"':'&quot;'}[c]));\nconst src=id=>'images/'+id+'.jpg';\nconst isDirty=()=>JSON.stringify(state)!==JSON.stringify(saved);\n\nfunction fit(m){\n  const x=m.x??50, y=m.y??50, z=m.z??1;\n  return `${m.f?'object-fit:contain;':''}object-position:${x}% ${y}%;transform-origin:${x}% ${y}%;transform:scale(${z})`;\n}\nfunction mediaHTML(m,alt){\n  if(!m) return '';\n  return m.kind==='video'\n    ? `\u003cvideo src=\"${src(m.id)}\" style=\"${fit(m)}\" controls playsinline muted preload=\"metadata\">\u003c/video>`\n    : `\u003cimg src=\"${src(m.id)}\" style=\"${fit(m)}\" alt=\"${esc(alt)}\" loading=\"lazy\">`;\n}\n/* Adjust: drag to reposition, slider to zoom (crop) inside the box */\nfunction adjust(path,box){\n  const m=getPath(path), media=box&&box.querySelector('img,video');\n  if(!m||!media) return;\n  const old=document.querySelector('.adj'); if(old) old.remove();\n  const ov=document.createElement('div'); ov.className='adj';\n  ov.innerHTML=`\u003cdiv class=\"adj-hint\">Drag the photo to reposition it\u003c/div>\n    \u003cdiv class=\"adj-bar\">\u003clabel for=\"adj-zoom\">Zoom \u003cinput type=\"range\" id=\"adj-zoom\" min=\"1\" max=\"3\" step=\"0.01\" value=\"${m.z??1}\">\u003c/label>\n    \u003cbutton type=\"button\" data-a=\"fit\">${m.f?'Fill the box':'Show whole photo'}\u003c/button>\u003cbutton type=\"button\" data-a=\"reset\">Reset\u003c/button>\u003cbutton type=\"button\" class=\"primary\" data-a=\"done\">Done\u003c/button>\u003c/div>`;\n  box.appendChild(ov);\n  const bar=ov.querySelector('.adj-bar'), zoom=ov.querySelector('#adj-zoom');\n  const clamp=v=>Math.max(0,Math.min(100,v));\n  const apply=()=>{ media.setAttribute('style',fit(m)); updateBar(); };\n  let drag=null;\n  ov.addEventListener('pointerdown',e=>{\n    if(bar.contains(e.target)) return;\n    e.preventDefault(); ov.setPointerCapture(e.pointerId); ov.classList.add('dragging');\n    drag={x:e.clientX,y:e.clientY,mx:m.x??50,my:m.y??50,w:ov.clientWidth,h:ov.clientHeight};\n  });\n  ov.addEventListener('pointermove',e=>{\n    if(!drag) return;\n    const z=m.z??1;\n    m.x=Math.round(clamp(drag.mx-(e.clientX-drag.x)/drag.w*150/z)*10)/10;\n    m.y=Math.round(clamp(drag.my-(e.clientY-drag.y)/drag.h*150/z)*10)/10;\n    apply();\n  });\n  const end=()=>{drag=null;ov.classList.remove('dragging')};\n  ov.addEventListener('pointerup',end); ov.addEventListener('pointercancel',end);\n  zoom.addEventListener('input',()=>{ m.z=+zoom.value; apply(); });\n  ov.addEventListener('click',e=>{\n    const a=e.target.closest('button')?.dataset.a; if(!a) return;\n    if(a==='fit'){ if(m.f) delete m.f; else { m.f=1; delete m.x; delete m.y; delete m.z; zoom.value=1; } e.target.textContent=m.f?'Fill the box':'Show whole photo'; apply(); }\n    if(a==='reset'){ delete m.x; delete m.y; delete m.z; delete m.f; zoom.value=1; ov.querySelector('[data-a=\"fit\"]').textContent='Show whole photo'; apply(); }\n    if(a==='done'){ ov.remove(); render(); if(isDirty()) toast('Position saved on this page. Press Save & publish when you\\u2019re done.'); }\n  });\n}\nfunction getPath(p){return p.reduce((o,k)=>o==null?o:o[k],state)}\nfunction setPath(p,v){let o=state;for(let i=0;i\u003cp.length-1;i++)o=o[p[i]];o[p[p.length-1]]=v}\nconst parsePath=s=>s.split('.').map(k=>/^\\d+$/.test(k)?+k:k);\n\n/* toast */\nlet toastT;\nfunction toast(msg,ms=4200){let t=$('#toast');t.textContent=msg;t.hidden=false;clearTimeout(toastT);if(ms)toastT=setTimeout(()=>t.hidden=true,ms)}\n\n/* file prep: big photos are resized to stay sharp but load fast */\nasync function prepare(f,max){\n  const t=(f.type||'').toLowerCase();\n  if(t.startsWith('video/')){\n    if(!/^video\\/(mp4|webm)$/.test(t)) throw new Error(`${f.name}: videos need to be MP4 or WebM.`);\n    if(f.size>LIMIT) throw new Error(`${f.name} is over 20 MB. Export a shorter or smaller version and try again.`);\n    return {blob:f,kind:'video'};\n  }\n  if(!/^image\\/(jpeg|png|webp|gif)$/.test(t)) throw new Error(`${f.name}: use a JPG, PNG or WebP photo. iPhone HEIC photos need converting to JPG first.`);\n  let bmp=null;\n  if(t!=='image/gif'){try{bmp=await createImageBitmap(f)}catch(e){bmp=null}}\n  if(!bmp){ if(f.size>LIMIT) throw new Error(`${f.name} is over 20 MB.`); return {blob:f,kind:'image'}; }\n  const long=Math.max(bmp.width,bmp.height);\n  if(long\u003c=max && f.size\u003c=LIMIT) return {blob:f,kind:'image'};\n  const s=Math.min(1,max/long), c=document.createElement('canvas');\n  c.width=Math.round(bmp.width*s); c.height=Math.round(bmp.height*s);\n  const g=c.getContext('2d'); g.fillStyle='#fff'; g.fillRect(0,0,c.width,c.height); g.drawImage(bmp,0,0,c.width,c.height);\n  const blob=await new Promise(r=>c.toBlob(r,'image/jpeg',0.92));\n  if(!blob) throw new Error(`${f.name} could not be processed.`);\n  return {blob,kind:'image'};\n}\nconst ERR={too_large:'That file is over 20 MB.',unsupported_type:'That file type isn’t supported. Use JPG, PNG, WebP, MP4 or WebM.',quota_or_state:'Storage for this page is full. Remove some photos you no longer use.',rate_limited:'Too many uploads at once. Wait a moment and try again.',upstream_auth:'Your session expired. Reload the page and sign in again.'};\nasync function uploadOne(f,max){\n  const p=await prepare(f,max);\n  try{\n    const r=await assets.upload(p.blob, p.blob.type?undefined:{type:'image/jpeg'});\n    return {id:r.id,kind:p.kind};\n  }catch(e){throw new Error(ERR[e&&e.code]||'Upload failed. Check your connection and try again.')}\n}\nfunction pick(accept,multiple){\n  return new Promise(res=>{const i=document.createElement('input');i.type='file';i.accept=accept;i.multiple=!!multiple;i.addEventListener('change',()=>res([...i.files]));i.click()});\n}\nconst ACCEPT_IMG='image/jpeg,image/png,image/webp,image/gif', ACCEPT_ANY=ACCEPT_IMG+',video/mp4,video/webm';\n\nasync function uploadInto(path,accept,max){\n  const files=await pick(accept,false); if(!files.length) return;\n  toast('Uploading…',0);\n  try{ setPath(path,await uploadOne(files[0],max)); toast('Added. Press Save & publish when you’re done.'); render(); }\n  catch(e){ toast(e.message,7000) }\n}\nasync function uploadHotel(i){\n  const files=await pick(ACCEPT_IMG,true); if(!files.length) return;\n  const ph=state.hotels[i].photos, empty=ph.map((m,j)=>m?-1:j).filter(j=>j>=0);\n  if(!empty.length){toast('All 10 photo spaces are full. Remove one first.');return}\n  const use=files.slice(0,empty.length);\n  let ok=0, err='';\n  for(let k=0;k\u003cuse.length;k++){\n    toast(`Uploading ${k+1} of ${use.length}…`,0);\n    try{ ph[empty[k]]=await uploadOne(use[k],2400); ok++; render(); }catch(e){ err=e.message }\n  }\n  const extra=files.length>empty.length?` ${files.length-empty.length} skipped: only 10 photos per hotel.`:'';\n  toast(err?`${ok} added. ${err}${extra}`:`${ok} photo${ok===1?'':'s'} added.${extra} Press Save & publish when you’re done.`, err||extra?8000:4200);\n}\n\nfunction tools(path,accept,max,box){\n  const m=getPath(path), t=document.createElement('div');\n  t.className='tools';\n  t.innerHTML=`\u003cbutton type=\"button\" class=\"primary\" data-a=\"up\">${m?'Replace':'Upload'}\u003c/button>${m?'\u003cbutton type=\"button\" data-a=\"adj\">Adjust\u003c/button>\u003cbutton type=\"button\" data-a=\"rm\">Remove\u003c/button>':''}`;\n  t.addEventListener('click',e=>{\n    const a=e.target.closest('button')?.dataset.a; if(!a) return;\n    if(a==='up') uploadInto(path,accept,max);\n    if(a==='adj') adjust(path, box||t.parentElement);\n    if(a==='rm'){ setPath(path,null); render(); }\n  });\n  return t;\n}\n\n/* static slots: hero, about, services, moments */\nfunction renderSlots(){\n  $$('[data-slot]').forEach(el=>{\n    if(el._ph===undefined) el._ph=el.innerHTML;\n    const path=parsePath(el.dataset.slot), m=getPath(path), kind=path[0];\n    const alt=el.dataset.alt||'';\n    el.innerHTML = m ? mediaHTML(m,alt) : el._ph;\n    el.classList.toggle('filled',!!m);\n    if(kind==='hero') el.classList.toggle('has',!!m);\n    el.hidden=false;\n    if(editing && kind!=='hero') el.appendChild(tools(path, ACCEPT_IMG, 2400));\n  });\n  const ht=$('#hero-tools'); ht.innerHTML='';\n  if(editing){ ht.appendChild(tools(['hero'],ACCEPT_IMG,3000,$('.hero-bg'))); ht.querySelector('[data-a=\"up\"]').textContent=state.hero?'Replace background':'Upload background'; }\n  let partial=false;\n  if(!editing && !state.demo && state.mom.some(Boolean)) $$('[data-slot^=\"mom.\"]').forEach(el=>{ if(!el.classList.contains('filled')){ el.hidden=true; partial=true; } });\n  const mg=$('.moments'); if(mg) mg.classList.toggle('partial',partial);\n}\n\n/* hotels */\nconst arrowSVG=d=>`\u003csvg viewBox=\"0 0 18 18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\u003cpath d=\"${d}\"/>\u003c/svg>`;\nconst isPlaceholderName=n=>!n.trim()||n==='Hotel name';\nfunction renderHotels(){\n  const host=$('#hotels'); host.innerHTML='';\n  state.hotels.forEach((h,i)=>{\n    const filled=h.photos.map((m,j)=>[m,j]).filter(x=>x[0]);\n    const demo=!!state.demo;\n    if(!editing && !demo && isPlaceholderName(h.name) && !filled.length) return;\n    const list = (editing || (demo && !filled.length)) ? h.photos.map((m,j)=>[m,j]) : (filled.length?filled:[[null,-1]]);\n    const el=document.createElement('article'); el.className='hotel';\n    const slides=list.map(([m,j])=>`\u003cdiv class=\"slide\" style=\"--s:${Math.max(j,0)}\">${m?mediaHTML(m,`${h.name}, photo ${j+1}`):`\u003cspan>${j>=0?`Photo ${j+1} of 10`:'Photos coming soon'}\u003c/span>`}\u003c/div>`).join('');\n    const multi=list.length>1;\n    el.innerHTML=`\u003cdiv class=\"carousel\">\u003cdiv class=\"track\">${slides}\u003c/div>${multi?`\u003cbutton class=\"arrow prev\" type=\"button\" aria-label=\"Previous photo\">${arrowSVG('M11 3L5 9l6 6')}\u003c/button>\u003cbutton class=\"arrow next\" type=\"button\" aria-label=\"Next photo\">${arrowSVG('M7 3l6 6-6 6')}\u003c/button>\u003cdiv class=\"dots\">${list.map(()=>'\u003ci>\u003c/i>').join('')}\u003c/div>`:''}\u003c/div>`+\n      (editing\n        ? `\u003cdiv class=\"meta editing\">\u003cinput class=\"ed\" id=\"hn${i}\" data-h=\"${i}\" data-f=\"name\" value=\"${esc(h.name)}\" aria-label=\"Hotel name\">\u003cinput class=\"ed where\" id=\"hw${i}\" data-h=\"${i}\" data-f=\"where\" value=\"${esc(h.where)}\" aria-label=\"Location\">\u003ctextarea class=\"ed\" id=\"ha${i}\" data-h=\"${i}\" data-f=\"about\" rows=\"3\" maxlength=\"400\" placeholder=\"2–3 lines about this hotel\" aria-label=\"About this hotel\">${esc(h.about||'')}\u003c/textarea>\u003cbutton type=\"button\" class=\"addbtn\" data-add=\"${i}\">Add photos (${filled.length}/10)\u003c/button>\u003c/div>`\n        : `\u003cdiv class=\"meta\">\u003cdiv class=\"row\">\u003ch3>${esc(h.name)}\u003c/h3>\u003cspan class=\"where\">${esc(h.where)}\u003c/span>\u003c/div>${(h.about||'').trim()?`\u003cp class=\"desc\">${esc(h.about.trim())}\u003c/p>`:(state.demo?'\u003cp class=\"desc demo\">Your 2–3 lines about this hotel will appear here: what makes the stay special, the setting, the experience.\u003c/p>':'')}\u003c/div>`);\n    host.appendChild(el);\n    if(editing) $$('.slide',el).forEach((s,k)=>s.appendChild(tools(['hotels',i,'photos',list[k][1]],ACCEPT_IMG,2400)));\n    if(!multi) return;\n    const track=$('.track',el), prev=$('.prev',el), next=$('.next',el), dots=$$('.dots i',el);\n    const idx=()=>Math.round(track.scrollLeft/track.clientWidth);\n    const upd=()=>{const k=idx();dots.forEach((d,j)=>d.classList.toggle('on',j===k));prev.disabled=k===0;next.disabled=k===dots.length-1};\n    prev.addEventListener('click',()=>track.scrollBy({left:-track.clientWidth}));\n    next.addEventListener('click',()=>track.scrollBy({left:track.clientWidth}));\n    track.addEventListener('scroll',()=>requestAnimationFrame(upd),{passive:true});\n    upd();\n  });\n}\ndocument.addEventListener('input',e=>{const t=e.target; if(t.classList&&t.classList.contains('ed')){state.hotels[+t.dataset.h][t.dataset.f]=t.value; updateBar();}});\ndocument.addEventListener('click',e=>{const b=e.target.closest&&e.target.closest('[data-add]'); if(b) uploadHotel(+b.dataset.add);});\n\n/* edit bar */\nfunction updateBar(){\n  if(!assets) return;\n  const d=isDirty();\n  $('#ebtoggle').textContent=editing?'Preview as brands see it':'Edit photos';\n  $('#ebmsg').textContent=saving?'Saving…':d?'You have unsaved changes.':editing?'Upload, replace or remove photos and videos.':'Only you can see this bar.';\n  $('#ebsave').hidden=!d; $('#ebdiscard').hidden=!d;\n  $('#ebsave').disabled=saving;\n}\nfunction render(){ renderSlots(); renderHotels(); updateBar(); }\n\nconst RESET=':root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}';\nconst enc=o=>JSON.stringify(o).replace(/\u003c/g,'\\\\u003c');\nfunction buildDoc(s){\n  return '\u003c!doctype html>\u003chtml>\u003chead>\u003cmeta charset=utf8>\u003cmeta name=viewport content=\"width=device-width,initial-scale=1,viewport-fit=cover\">\u003cstyle>'+RESET+'\u003c\\/style>\u003c\\/head>\u003cbody>'\n    + SRC.a + '\u003cscript type=\"application/json\" id=\"state\">'+enc(s)+'\u003c\\/script>\u003cscript type=\"application/json\" id=\"src\">'+enc(SRC)+'\u003c\\/script>' + SRC.b + '\u003c\\/body>\u003c\\/html>';\n}\nasync function save(){\n  if(saving) return; saving=true; updateBar();\n  try{ await art.publish(buildDoc(state)); $('#ebmsg').textContent='Saved. Loading the new version…'; window.removeEventListener('beforeunload',guard); }\n  catch(e){\n    saving=false; updateBar();\n    const c=e&&e.code;\n    if(c==='conflict') toast('This page was changed somewhere else, so it’s reloading the latest version. Redo your last changes after it loads.',9000);\n    else if(c==='not_writer'||c==='not_granted'||c==='consent_required') toast('You don’t have permission to save this page.',7000);\n    else if(c==='too_large') toast('The page is too large to save. Remove a few items and try again.',7000);\n    else if(c==='rate_limited') toast('Saving too often. Wait a minute and try again.',7000);\n    else toast('Couldn’t save. Check your connection and try again.',7000);\n  }\n}\nfunction guard(e){ if(isDirty()){ e.preventDefault(); e.returnValue=''; } }\n\n$('#ebtoggle').addEventListener('click',()=>{editing=!editing;document.body.classList.toggle('editing',editing);render();});\n$('#ebdiscard').addEventListener('click',()=>{state=clone(saved);render();toast('Changes discarded.');});\n$('#ebsave').addEventListener('click',save);\n\nrender();\n\n(async()=>{\n  if(!window.claude||!window.claude.use) return;\n  const [a,ar]=await Promise.all([window.claude.use('assets'),window.claude.use('artifact')]);\n  if(!a||!ar) return;\n  assets=a; art=ar;\n  $('#editbar').hidden=false; document.body.classList.add('has-editbar');\n  window.addEventListener('beforeunload',guard);\n  updateBar();\n})();\n\n/* copy buttons */\n$$('.copy').forEach(b=>b.addEventListener('click',()=>{\n  const el=document.getElementById(b.dataset.target), text=el.textContent.trim();\n  const done=()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1600)};\n  const fallback=()=>{const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'};\n  try{navigator.clipboard.writeText(text).then(done,fallback)}catch(e){fallback()}\n}));\n})();\n\u003c/script>\n"}</script><script>
+(function(){
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const readJSON=id=>JSON.parse(document.getElementById(id).textContent);
+const clone=o=>JSON.parse(JSON.stringify(o));
+const SRC=readJSON('src');
+const saved=readJSON('state');
+let state=clone(saved);
+let editing=false, assets=null, art=null, saving=false;
+const MB=1024*1024, LIMIT=20*MB;
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const src=id=>'images/'+id+'.jpg';
+const isDirty=()=>JSON.stringify(state)!==JSON.stringify(saved);
+
+function fit(m){
+  const x=m.x??50, y=m.y??50, z=m.z??1;
+  return `${m.f?'object-fit:contain;':''}object-position:${x}% ${y}%;transform-origin:${x}% ${y}%;transform:scale(${z})`;
+}
+function mediaHTML(m,alt){
+  if(!m) return '';
+  return m.kind==='video'
+    ? `<video src="${src(m.id)}" style="${fit(m)}" controls playsinline muted preload="metadata"></video>`
+    : `<img src="${src(m.id)}" style="${fit(m)}" alt="${esc(alt)}" loading="lazy">`;
+}
+/* Adjust: drag to reposition, slider to zoom (crop) inside the box */
+function adjust(path,box){
+  const m=getPath(path), media=box&&box.querySelector('img,video');
+  if(!m||!media) return;
+  const old=document.querySelector('.adj'); if(old) old.remove();
+  const ov=document.createElement('div'); ov.className='adj';
+  ov.innerHTML=`<div class="adj-hint">Drag the photo to reposition it</div>
+    <div class="adj-bar"><label for="adj-zoom">Zoom <input type="range" id="adj-zoom" min="1" max="3" step="0.01" value="${m.z??1}"></label>
+    <button type="button" data-a="fit">${m.f?'Fill the box':'Show whole photo'}</button><button type="button" data-a="reset">Reset</button><button type="button" class="primary" data-a="done">Done</button></div>`;
+  box.appendChild(ov);
+  const bar=ov.querySelector('.adj-bar'), zoom=ov.querySelector('#adj-zoom');
+  const clamp=v=>Math.max(0,Math.min(100,v));
+  const apply=()=>{ media.setAttribute('style',fit(m)); updateBar(); };
+  let drag=null;
+  ov.addEventListener('pointerdown',e=>{
+    if(bar.contains(e.target)) return;
+    e.preventDefault(); ov.setPointerCapture(e.pointerId); ov.classList.add('dragging');
+    drag={x:e.clientX,y:e.clientY,mx:m.x??50,my:m.y??50,w:ov.clientWidth,h:ov.clientHeight};
+  });
+  ov.addEventListener('pointermove',e=>{
+    if(!drag) return;
+    const z=m.z??1;
+    m.x=Math.round(clamp(drag.mx-(e.clientX-drag.x)/drag.w*150/z)*10)/10;
+    m.y=Math.round(clamp(drag.my-(e.clientY-drag.y)/drag.h*150/z)*10)/10;
+    apply();
+  });
+  const end=()=>{drag=null;ov.classList.remove('dragging')};
+  ov.addEventListener('pointerup',end); ov.addEventListener('pointercancel',end);
+  zoom.addEventListener('input',()=>{ m.z=+zoom.value; apply(); });
+  ov.addEventListener('click',e=>{
+    const a=e.target.closest('button')?.dataset.a; if(!a) return;
+    if(a==='fit'){ if(m.f) delete m.f; else { m.f=1; delete m.x; delete m.y; delete m.z; zoom.value=1; } e.target.textContent=m.f?'Fill the box':'Show whole photo'; apply(); }
+    if(a==='reset'){ delete m.x; delete m.y; delete m.z; delete m.f; zoom.value=1; ov.querySelector('[data-a="fit"]').textContent='Show whole photo'; apply(); }
+    if(a==='done'){ ov.remove(); render(); if(isDirty()) toast('Position saved on this page. Press Save & publish when you\u2019re done.'); }
+  });
+}
+function getPath(p){return p.reduce((o,k)=>o==null?o:o[k],state)}
+function setPath(p,v){let o=state;for(let i=0;i<p.length-1;i++)o=o[p[i]];o[p[p.length-1]]=v}
+const parsePath=s=>s.split('.').map(k=>/^\d+$/.test(k)?+k:k);
+
+/* toast */
+let toastT;
+function toast(msg,ms=4200){let t=$('#toast');t.textContent=msg;t.hidden=false;clearTimeout(toastT);if(ms)toastT=setTimeout(()=>t.hidden=true,ms)}
+
+/* file prep: big photos are resized to stay sharp but load fast */
+async function prepare(f,max){
+  const t=(f.type||'').toLowerCase();
+  if(t.startsWith('video/')){
+    if(!/^video\/(mp4|webm)$/.test(t)) throw new Error(`${f.name}: videos need to be MP4 or WebM.`);
+    if(f.size>LIMIT) throw new Error(`${f.name} is over 20 MB. Export a shorter or smaller version and try again.`);
+    return {blob:f,kind:'video'};
+  }
+  if(!/^image\/(jpeg|png|webp|gif)$/.test(t)) throw new Error(`${f.name}: use a JPG, PNG or WebP photo. iPhone HEIC photos need converting to JPG first.`);
+  let bmp=null;
+  if(t!=='image/gif'){try{bmp=await createImageBitmap(f)}catch(e){bmp=null}}
+  if(!bmp){ if(f.size>LIMIT) throw new Error(`${f.name} is over 20 MB.`); return {blob:f,kind:'image'}; }
+  const long=Math.max(bmp.width,bmp.height);
+  if(long<=max && f.size<=LIMIT) return {blob:f,kind:'image'};
+  const s=Math.min(1,max/long), c=document.createElement('canvas');
+  c.width=Math.round(bmp.width*s); c.height=Math.round(bmp.height*s);
+  const g=c.getContext('2d'); g.fillStyle='#fff'; g.fillRect(0,0,c.width,c.height); g.drawImage(bmp,0,0,c.width,c.height);
+  const blob=await new Promise(r=>c.toBlob(r,'image/jpeg',0.92));
+  if(!blob) throw new Error(`${f.name} could not be processed.`);
+  return {blob,kind:'image'};
+}
+const ERR={too_large:'That file is over 20 MB.',unsupported_type:'That file type isn’t supported. Use JPG, PNG, WebP, MP4 or WebM.',quota_or_state:'Storage for this page is full. Remove some photos you no longer use.',rate_limited:'Too many uploads at once. Wait a moment and try again.',upstream_auth:'Your session expired. Reload the page and sign in again.'};
+async function uploadOne(f,max){
+  const p=await prepare(f,max);
+  try{
+    const r=await assets.upload(p.blob, p.blob.type?undefined:{type:'image/jpeg'});
+    return {id:r.id,kind:p.kind};
+  }catch(e){throw new Error(ERR[e&&e.code]||'Upload failed. Check your connection and try again.')}
+}
+function pick(accept,multiple){
+  return new Promise(res=>{const i=document.createElement('input');i.type='file';i.accept=accept;i.multiple=!!multiple;i.addEventListener('change',()=>res([...i.files]));i.click()});
+}
+const ACCEPT_IMG='image/jpeg,image/png,image/webp,image/gif', ACCEPT_ANY=ACCEPT_IMG+',video/mp4,video/webm';
+
+async function uploadInto(path,accept,max){
+  const files=await pick(accept,false); if(!files.length) return;
+  toast('Uploading…',0);
+  try{ setPath(path,await uploadOne(files[0],max)); toast('Added. Press Save & publish when you’re done.'); render(); }
+  catch(e){ toast(e.message,7000) }
+}
+async function uploadHotel(i){
+  const files=await pick(ACCEPT_IMG,true); if(!files.length) return;
+  const ph=state.hotels[i].photos, empty=ph.map((m,j)=>m?-1:j).filter(j=>j>=0);
+  if(!empty.length){toast('All 10 photo spaces are full. Remove one first.');return}
+  const use=files.slice(0,empty.length);
+  let ok=0, err='';
+  for(let k=0;k<use.length;k++){
+    toast(`Uploading ${k+1} of ${use.length}…`,0);
+    try{ ph[empty[k]]=await uploadOne(use[k],2400); ok++; render(); }catch(e){ err=e.message }
+  }
+  const extra=files.length>empty.length?` ${files.length-empty.length} skipped: only 10 photos per hotel.`:'';
+  toast(err?`${ok} added. ${err}${extra}`:`${ok} photo${ok===1?'':'s'} added.${extra} Press Save & publish when you’re done.`, err||extra?8000:4200);
+}
+
+function tools(path,accept,max,box){
+  const m=getPath(path), t=document.createElement('div');
+  t.className='tools';
+  t.innerHTML=`<button type="button" class="primary" data-a="up">${m?'Replace':'Upload'}</button>${m?'<button type="button" data-a="adj">Adjust</button><button type="button" data-a="rm">Remove</button>':''}`;
+  t.addEventListener('click',e=>{
+    const a=e.target.closest('button')?.dataset.a; if(!a) return;
+    if(a==='up') uploadInto(path,accept,max);
+    if(a==='adj') adjust(path, box||t.parentElement);
+    if(a==='rm'){ setPath(path,null); render(); }
+  });
+  return t;
+}
+
+/* static slots: hero, about, services, moments */
+function renderSlots(){
+  $$('[data-slot]').forEach(el=>{
+    if(el._ph===undefined) el._ph=el.innerHTML;
+    const path=parsePath(el.dataset.slot), m=getPath(path), kind=path[0];
+    const alt=el.dataset.alt||'';
+    el.innerHTML = m ? mediaHTML(m,alt) : el._ph;
+    el.classList.toggle('filled',!!m);
+    if(kind==='hero') el.classList.toggle('has',!!m);
+    el.hidden=false;
+    if(editing && kind!=='hero') el.appendChild(tools(path, ACCEPT_IMG, 2400));
+  });
+  const ht=$('#hero-tools'); ht.innerHTML='';
+  if(editing){ ht.appendChild(tools(['hero'],ACCEPT_IMG,3000,$('.hero-bg'))); ht.querySelector('[data-a="up"]').textContent=state.hero?'Replace background':'Upload background'; }
+  let partial=false;
+  if(!editing && !state.demo && state.mom.some(Boolean)) $$('[data-slot^="mom."]').forEach(el=>{ if(!el.classList.contains('filled')){ el.hidden=true; partial=true; } });
+  const mg=$('.moments'); if(mg) mg.classList.toggle('partial',partial);
+}
+
+/* hotels */
+const arrowSVG=d=>`<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="${d}"/></svg>`;
+const isPlaceholderName=n=>!n.trim()||n==='Hotel name';
+function renderHotels(){
+  const host=$('#hotels'); host.innerHTML='';
+  state.hotels.forEach((h,i)=>{
+    const filled=h.photos.map((m,j)=>[m,j]).filter(x=>x[0]);
+    const demo=!!state.demo;
+    if(!editing && !demo && isPlaceholderName(h.name) && !filled.length) return;
+    const list = (editing || (demo && !filled.length)) ? h.photos.map((m,j)=>[m,j]) : (filled.length?filled:[[null,-1]]);
+    const el=document.createElement('article'); el.className='hotel';
+    const slides=list.map(([m,j])=>`<div class="slide" style="--s:${Math.max(j,0)}">${m?mediaHTML(m,`${h.name}, photo ${j+1}`):`<span>${j>=0?`Photo ${j+1} of 10`:'Photos coming soon'}</span>`}</div>`).join('');
+    const multi=list.length>1;
+    el.innerHTML=`<div class="carousel"><div class="track">${slides}</div>${multi?`<button class="arrow prev" type="button" aria-label="Previous photo">${arrowSVG('M11 3L5 9l6 6')}</button><button class="arrow next" type="button" aria-label="Next photo">${arrowSVG('M7 3l6 6-6 6')}</button><div class="dots">${list.map(()=>'<i></i>').join('')}</div>`:''}</div>`+
+      (editing
+        ? `<div class="meta editing"><input class="ed" id="hn${i}" data-h="${i}" data-f="name" value="${esc(h.name)}" aria-label="Hotel name"><input class="ed where" id="hw${i}" data-h="${i}" data-f="where" value="${esc(h.where)}" aria-label="Location"><textarea class="ed" id="ha${i}" data-h="${i}" data-f="about" rows="3" maxlength="400" placeholder="2–3 lines about this hotel" aria-label="About this hotel">${esc(h.about||'')}</textarea><button type="button" class="addbtn" data-add="${i}">Add photos (${filled.length}/10)</button></div>`
+        : `<div class="meta"><div class="row"><h3>${esc(h.name)}</h3><span class="where">${esc(h.where)}</span></div>${(h.about||'').trim()?`<p class="desc">${esc(h.about.trim())}</p>`:(state.demo?'<p class="desc demo">Your 2–3 lines about this hotel will appear here: what makes the stay special, the setting, the experience.</p>':'')}</div>`);
+    host.appendChild(el);
+    if(editing) $$('.slide',el).forEach((s,k)=>s.appendChild(tools(['hotels',i,'photos',list[k][1]],ACCEPT_IMG,2400)));
+    if(!multi) return;
+    const track=$('.track',el), prev=$('.prev',el), next=$('.next',el), dots=$$('.dots i',el);
+    const idx=()=>Math.round(track.scrollLeft/track.clientWidth);
+    const upd=()=>{const k=idx();dots.forEach((d,j)=>d.classList.toggle('on',j===k));prev.disabled=k===0;next.disabled=k===dots.length-1};
+    prev.addEventListener('click',()=>track.scrollBy({left:-track.clientWidth}));
+    next.addEventListener('click',()=>track.scrollBy({left:track.clientWidth}));
+    track.addEventListener('scroll',()=>requestAnimationFrame(upd),{passive:true});
+    upd();
+  });
+}
+document.addEventListener('input',e=>{const t=e.target; if(t.classList&&t.classList.contains('ed')){state.hotels[+t.dataset.h][t.dataset.f]=t.value; updateBar();}});
+document.addEventListener('click',e=>{const b=e.target.closest&&e.target.closest('[data-add]'); if(b) uploadHotel(+b.dataset.add);});
+
+/* edit bar */
+function updateBar(){
+  if(!assets) return;
+  const d=isDirty();
+  $('#ebtoggle').textContent=editing?'Preview as brands see it':'Edit photos';
+  $('#ebmsg').textContent=saving?'Saving…':d?'You have unsaved changes.':editing?'Upload, replace or remove photos and videos.':'Only you can see this bar.';
+  $('#ebsave').hidden=!d; $('#ebdiscard').hidden=!d;
+  $('#ebsave').disabled=saving;
+}
+function render(){ renderSlots(); renderHotels(); updateBar(); }
+
+const RESET=':root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}';
+const enc=o=>JSON.stringify(o).replace(/</g,'\\u003c');
+function buildDoc(s){
+  return '<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>'+RESET+'<\/style><\/head><body>'
+    + SRC.a + '<script type="application/json" id="state">'+enc(s)+'<\/script><script type="application/json" id="src">'+enc(SRC)+'<\/script>' + SRC.b + '<\/body><\/html>';
+}
+async function save(){
+  if(saving) return; saving=true; updateBar();
+  try{ await art.publish(buildDoc(state)); $('#ebmsg').textContent='Saved. Loading the new version…'; window.removeEventListener('beforeunload',guard); }
+  catch(e){
+    saving=false; updateBar();
+    const c=e&&e.code;
+    if(c==='conflict') toast('This page was changed somewhere else, so it’s reloading the latest version. Redo your last changes after it loads.',9000);
+    else if(c==='not_writer'||c==='not_granted'||c==='consent_required') toast('You don’t have permission to save this page.',7000);
+    else if(c==='too_large') toast('The page is too large to save. Remove a few items and try again.',7000);
+    else if(c==='rate_limited') toast('Saving too often. Wait a minute and try again.',7000);
+    else toast('Couldn’t save. Check your connection and try again.',7000);
+  }
+}
+function guard(e){ if(isDirty()){ e.preventDefault(); e.returnValue=''; } }
+
+$('#ebtoggle').addEventListener('click',()=>{editing=!editing;document.body.classList.toggle('editing',editing);render();});
+$('#ebdiscard').addEventListener('click',()=>{state=clone(saved);render();toast('Changes discarded.');});
+$('#ebsave').addEventListener('click',save);
+
+render();
+
+(async()=>{
+  if(!window.claude||!window.claude.use) return;
+  const [a,ar]=await Promise.all([window.claude.use('assets'),window.claude.use('artifact')]);
+  if(!a||!ar) return;
+  assets=a; art=ar;
+  $('#editbar').hidden=false; document.body.classList.add('has-editbar');
+  window.addEventListener('beforeunload',guard);
+  updateBar();
+})();
+
+/* copy buttons */
+$$('.copy').forEach(b=>b.addEventListener('click',()=>{
+  const el=document.getElementById(b.dataset.target), text=el.textContent.trim();
+  const done=()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1600)};
+  const fallback=()=>{const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'};
+  try{navigator.clipboard.writeText(text).then(done,fallback)}catch(e){fallback()}
+}));
+})();
+</script>
+
+</body></html>
